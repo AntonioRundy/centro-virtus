@@ -36,7 +36,7 @@ jobs:
         env:
           # Set this to your GitHub repo name if deploying to a subdirectory
           # e.g., if your repo is github.com/user/centro-galileu, set: /centro-galileu
-          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_BASE_PATH: "/centro-galileu1"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
