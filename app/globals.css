@@ -1,72 +1,39 @@
 @import "tailwindcss";
 
-/* ── Custom colour tokens ────────────────────────────── */
+/* ── Colour tokens ───────────────────────────────────── */
 :root {
-  --navy-darkest: #070e1f;
-  --navy-dark:    #0a1628;
-  --navy:         #0f2044;
-  --navy-light:   #1a3460;
-  --navy-card:    #111d3c;
-  --green:        #22c55e;
-  --green-dark:   #16a34a;
-  --green-light:  #4ade80;
-  --yellow:       #eab308;
-  --yellow-light: #fde047;
+  --yellow:        #f5c518;
+  --yellow-hover:  #e6b800;
+  --yellow-light:  #fffbeb;
+  --yellow-border: #fde68a;
+  --green:         #16a34a;
+  --green-hover:   #15803d;
+  --gray-dark:     #111827;
+  --gray-mid:      #6b7280;
+  --gray-light:    #f9fafb;
+  --border:        #e5e7eb;
 }
 
-/* ── Smooth scroll ───────────────────────────────────── */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--navy-dark);
-  color: #e2e8f0;
+/* ── Base ────────────────────────────────────────────── */
+html  { scroll-behavior: smooth; }
+body  {
+  background-color: #ffffff;
+  color: #111827;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Gradient headline text ─────────────────────────── */
+/* ── Gradient text (yellow → amber) ─────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #22c55e 0%, #eab308 100%);
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ── Keyframes ──────────────────────────────────────── */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(34, 197, 94, 0.45); }
-  50%       { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);   }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0);    }
-}
-
-/* ── Utility classes ────────────────────────────────── */
-.animate-fade-up        { animation: fadeInUp   0.6s ease-out both; }
-.animate-fade-in        { animation: fadeIn     0.4s ease-out both; }
-.animate-slide-right    { animation: slideInRight 0.4s ease-out both; }
-.animate-pulse-glow     { animation: pulseGlow  2s ease-in-out infinite; }
-
-/* Stagger helpers */
-.delay-100 { animation-delay: 0.10s; }
-.delay-200 { animation-delay: 0.20s; }
-.delay-300 { animation-delay: 0.30s; }
-.delay-400 { animation-delay: 0.40s; }
-.delay-500 { animation-delay: 0.50s; }
+/* ── Section backgrounds ─────────────────────────────── */
+.section-white { background-color: #ffffff; }
+.section-gray  { background-color: #f9fafb; }
 
 /* ── Card hover lift ────────────────────────────────── */
 .card-lift {
@@ -74,17 +41,45 @@ body {
 }
 .card-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* ── Section divider gradient ───────────────────────── */
+/* ── Keyframes ──────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(22, 163, 74, 0.50); }
+  50%       { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);   }
+}
+
+.animate-fade-up     { animation: fadeInUp  0.55s ease-out both; }
+.animate-fade-in     { animation: fadeIn    0.35s ease-out both; }
+.animate-slide-right { animation: slideRight 0.35s ease-out both; }
+.animate-pulse-glow  { animation: pulseGlow 2s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.10s; }
+.delay-200 { animation-delay: 0.20s; }
+.delay-300 { animation-delay: 0.30s; }
+.delay-400 { animation-delay: 0.40s; }
+
+/* ── Divider ────────────────────────────────────────── */
 .section-divider {
-  background: linear-gradient(90deg, transparent, rgba(34,197,94,0.3), transparent);
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
   height: 1px;
 }
 
 /* ── Scrollbar ──────────────────────────────────────── */
-::-webkit-scrollbar         { width: 8px; }
-::-webkit-scrollbar-track   { background: var(--navy-dark); }
-::-webkit-scrollbar-thumb   { background: var(--navy-light); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--green-dark); }
+::-webkit-scrollbar         { width: 6px; }
+::-webkit-scrollbar-track   { background: #f9fafb; }
+::-webkit-scrollbar-thumb   { background: #d1d5db; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #f5c518; }

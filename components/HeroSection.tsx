@@ -1,10 +1,12 @@
+import Image from "next/image";
 import { ArrowRight, MessageCircle, Star, Users, Award } from "lucide-react";
 
-const WA_URL = "https://wa.me/244946038986";
+const WA_URL  = "https://wa.me/244946038986";
+const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o Centro de Estudos Galileu.")}`;
 
 const stats = [
-  { icon: Star,  value: "+5 anos",   label: "de experiência"      },
-  { icon: Users, value: "+200",      label: "alunos acompanhados" },
+  { icon: Star,  value: "+5 anos",   label: "de experiência"       },
+  { icon: Users, value: "+200",      label: "alunos acompanhados"  },
   { icon: Award, value: "4 escolas", label: "currículos suportados" },
 ];
 
@@ -12,94 +14,111 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #070e1f 0%, #0f2044 50%, #0a1628 100%)" }}
+      className="section-white min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Decorative orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-yellow-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+          {/* ── LEFT: Text ── */}
+          <div className="order-2 lg:order-1">
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-semibold px-4 py-2 rounded-full mb-8 animate-fade-up">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Vagas disponíveis para este mês
-        </div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 text-yellow-700 text-xs font-semibold px-4 py-2 rounded-full mb-7 animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+              Vagas disponíveis para este mês
+            </div>
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-up delay-100">
-          Bem-vindo ao{" "}
-          <span className="gradient-text block sm:inline">Centro Galileu</span>
-        </h1>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6 animate-fade-up delay-100">
+              Bem-vindo ao{" "}
+              <span className="gradient-text">Centro Galileu</span>
+            </h1>
 
-        {/* Subtitle */}
-        <p className="max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 animate-fade-up delay-200">
-          Acompanhamento escolar personalizado para o sucesso do seu educando —
-          online ou ao domicílio, com professores qualificados e metodologia comprovada.
-        </p>
+            {/* Subtitle */}
+            <p className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-8 max-w-lg animate-fade-up delay-200">
+              Acompanhamento escolar personalizado para o sucesso do seu educando —
+              online ou ao domicílio, com professores qualificados e metodologia comprovada.
+            </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up delay-300">
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-xl shadow-green-500/25 hover:shadow-green-400/40 hover:scale-105"
-          >
-            Comece Agora
-            <ArrowRight size={18} />
-          </a>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white font-semibold text-base px-8 py-4 rounded-full transition-all duration-200 hover:bg-white/10 backdrop-blur-sm"
-          >
-            <MessageCircle size={18} />
-            Fale Connosco
-          </a>
-        </div>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-up delay-300">
+              <a
+                href={WA_FULL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-yellow-200 hover:shadow-yellow-300 hover:scale-[1.03]"
+              >
+                Comece Agora
+                <ArrowRight size={18} />
+              </a>
+              <a
+                href={WA_FULL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-green-500 text-gray-700 hover:text-green-600 font-semibold text-base px-8 py-4 rounded-full transition-all duration-200 hover:bg-green-50"
+              >
+                <MessageCircle size={18} />
+                Fale Connosco
+              </a>
+            </div>
 
-        {/* Trust badge */}
-        <p className="text-slate-400 text-sm mb-4 animate-fade-up delay-300">
-          ✓ Aula experimental gratuita &nbsp;·&nbsp; ✓ Sem compromisso &nbsp;·&nbsp; ✓ Resposta rápida
-        </p>
+            {/* Trust line */}
+            <p className="text-gray-400 text-sm mb-8 animate-fade-up delay-300">
+              ✓ Aula experimental gratuita &nbsp;·&nbsp; ✓ Sem compromisso &nbsp;·&nbsp; ✓ Resposta rápida
+            </p>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl animate-fade-up delay-400">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 backdrop-blur-sm"
-            >
-              <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                <Icon size={18} className="text-green-400" />
-              </div>
-              <div>
-                <p className="text-white font-bold text-lg leading-none">{value}</p>
-                <p className="text-slate-400 text-xs mt-0.5">{label}</p>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 animate-fade-up delay-400">
+              {stats.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={label}
+                  className="bg-gray-50 border border-gray-100 rounded-2xl px-4 py-4 text-center"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-yellow-100 flex items-center justify-center mx-auto mb-2">
+                    <Icon size={16} className="text-yellow-600" />
+                  </div>
+                  <p className="text-gray-900 font-extrabold text-lg leading-none">{value}</p>
+                  <p className="text-gray-400 text-xs mt-1 leading-tight">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── RIGHT: Hero image ── */}
+          <div className="order-1 lg:order-2 animate-fade-up delay-200">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-gray-200 aspect-[4/5] lg:aspect-[3/4] bg-yellow-50">
+              <Image
+                src="/hero.jpg"
+                alt="Aluno a estudar com professor do Centro Galileu"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Decorative badge on image */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg">
+                <p className="text-gray-900 font-bold text-sm">🎓 Aula experimental gratuita</p>
+                <p className="text-gray-500 text-xs mt-0.5">Experimente sem compromisso — fale connosco hoje.</p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 60L720 0L1440 60V60H0V60Z" fill="#0a1628" />
-        </svg>
+            {/* Floating accent cards */}
+            <div className="flex gap-3 mt-4">
+              <div className="flex-1 bg-yellow-400 rounded-2xl px-4 py-3 text-center">
+                <p className="text-gray-900 font-extrabold text-xl">+200</p>
+                <p className="text-yellow-800 text-xs font-medium">Alunos</p>
+              </div>
+              <div className="flex-1 bg-gray-900 rounded-2xl px-4 py-3 text-center">
+                <p className="text-white font-extrabold text-xl">Online</p>
+                <p className="text-gray-400 text-xs font-medium">& Domicílio</p>
+              </div>
+              <div className="flex-1 bg-green-500 rounded-2xl px-4 py-3 text-center">
+                <p className="text-white font-extrabold text-xl">+5</p>
+                <p className="text-green-100 text-xs font-medium">Anos exp.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
