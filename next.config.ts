@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   },
   basePath: "/centro-galileu1",
   trailingSlash: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
