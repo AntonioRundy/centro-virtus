@@ -38,14 +38,10 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset("/logo.png")}
-            alt="Centro de Estudo Galileu"
-            className="h-10 w-auto object-contain"
-          />
-          <span className="font-extrabold text-[#0f172a] text-base leading-tight hidden lg:block">
+          <img src={asset("/logo.png")} alt="Centro de Estudo Galileu" className="h-10 w-auto object-contain" />
+          <span className="font-extrabold text-base leading-tight hidden lg:block" style={{ color: "#0f172a" }}>
             Centro de Estudo{" "}
-            <span style={{ color: "#f4b400" }}>Galileu</span>
+            <span style={{ color: "#16a34a" }}>Galileu</span>
           </span>
         </a>
 
@@ -55,29 +51,31 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative text-[#334155] hover:text-[#0f172a] text-sm font-medium transition-colors duration-200 group"
+                className="relative text-sm font-medium transition-colors duration-200 group"
+                style={{ color: "#334155" }}
               >
                 {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#f4b400] group-hover:w-full transition-all duration-300 rounded-full" />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 rounded-full" />
               </a>
             </li>
           ))}
         </ul>
 
-        {/* Desktop CTA */}
+        {/* CTA */}
         <a
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-green-600/25 hover:scale-[1.03]"
         >
-          Fale Connosco
+          Agendar Aula
         </a>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg text-[#334155] hover:bg-slate-100 transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+          style={{ color: "#334155" }}
           aria-label="Abrir menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -93,7 +91,8 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-[#334155] hover:bg-yellow-50 hover:text-[#0f172a] text-sm font-medium transition-colors"
+                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors hover:bg-green-50"
+                  style={{ color: "#334155" }}
                 >
                   {link.label}
                 </a>
@@ -106,7 +105,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-full transition-all duration-300"
           >
-            Fale Connosco
+            Agendar Aula Gratuita
           </a>
         </div>
       )}

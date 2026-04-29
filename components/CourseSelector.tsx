@@ -31,39 +31,50 @@ export default function CourseSelector() {
     <section id="precos" className="section-gray py-20 lg:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#f4b400" }}>
-            Personalize o seu plano
+          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+            Preços transparentes
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
-            Escolha o que pretende <span className="gradient-text">aprender</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: "#0f172a" }}>
+            Escolha a disciplina <span className="gradient-text">e o nível</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: "#64748b" }}>
-            Em 3 passos simples, encontre o plano ideal para o seu educando.
+          <p className="text-base mb-3" style={{ color: "#64748b" }}>
+            Valores a partir de <strong style={{ color: "#0f172a" }}>6.000 Kz/hora</strong>
+          </p>
+          <p className="text-sm" style={{ color: "#64748b" }}>
+            O encarregado monta o plano conforme as horas desejadas.
           </p>
         </div>
 
-        {/* Step indicators */}
+        {/* Steps */}
         <div className="flex items-center justify-center gap-2 mb-12">
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex items-center gap-2">
               <div
                 className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                  step === s ? "border-2 border-[#f4b400] text-[#f4b400]" : step < s ? "bg-slate-100 text-slate-400" : ""
+                  step === s ? "border-2 border-green-500" : step < s ? "bg-slate-100 text-slate-400" : ""
                 }`}
-                style={step > s ? { backgroundColor: "#f4b400", color: "#0f172a" } : {}}
+                style={
+                  step > s
+                    ? { backgroundColor: "#16a34a", color: "#fff" }
+                    : step === s
+                    ? { color: "#16a34a" }
+                    : {}
+                }
               >
                 {step > s ? <CheckCircle size={16} /> : s}
               </div>
               {s < 3 && (
-                <div className={`w-16 h-0.5 rounded-full transition-all duration-300 ${step > s ? "bg-[#f4b400]" : "bg-slate-200"}`} />
+                <div
+                  className="w-16 h-0.5 rounded-full transition-all duration-300"
+                  style={{ backgroundColor: step > s ? "#16a34a" : "#e2e8f0" }}
+                />
               )}
             </div>
           ))}
         </div>
 
-        {/* ── STEP 1: Subject — individual colors ── */}
+        {/* Step 1: Subjects */}
         {step === 1 && (
           <div className="animate-fade-up">
             <h3 className="text-xl font-bold text-center mb-8" style={{ color: "#0f172a" }}>
@@ -75,10 +86,7 @@ export default function CourseSelector() {
                   key={s.id}
                   onClick={() => { setSubject(s); setStep(2); }}
                   className="card-lift group rounded-2xl p-5 text-center cursor-pointer"
-                  style={{
-                    backgroundColor: s.color,
-                    boxShadow: `0 10px 28px ${s.color}44`,
-                  }}
+                  style={{ backgroundColor: s.color, boxShadow: `0 10px 28px ${s.color}44` }}
                 >
                   <div className="text-4xl mb-3">{s.icon}</div>
                   <p className="font-semibold text-sm text-white">{s.name}</p>
@@ -89,7 +97,7 @@ export default function CourseSelector() {
           </div>
         )}
 
-        {/* ── STEP 2: Level — GREEN ── */}
+        {/* Step 2: Level */}
         {step === 2 && (
           <div className="animate-fade-up">
             <div className="flex items-center justify-between mb-8">
@@ -99,10 +107,8 @@ export default function CourseSelector() {
               </button>
             </div>
             {subject && (
-              <div
-                className="inline-flex items-center gap-2 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6"
-                style={{ backgroundColor: subject.color }}
-              >
+              <div className="inline-flex items-center gap-2 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6"
+                style={{ backgroundColor: subject.color }}>
                 {subject.icon} {subject.name} selecionado
               </div>
             )}
@@ -112,20 +118,20 @@ export default function CourseSelector() {
                   key={l.key}
                   onClick={() => { setLevel(l.key); setStep(3); }}
                   className="card-lift group rounded-2xl p-6 text-center cursor-pointer"
-                  style={{ backgroundColor: "#16a34a", boxShadow: "0 10px 28px rgba(22,163,74,0.25)" }}
+                  style={{ backgroundColor: "#2563eb", boxShadow: "0 10px 28px rgba(37,99,235,0.25)" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-black text-xl mx-auto mb-3">
                     {l.key}
                   </div>
                   <p className="font-bold text-sm text-white">{l.label}</p>
-                  <p className="text-xs mt-1 text-green-100">{l.range}</p>
+                  <p className="text-xs mt-1 text-blue-200">{l.range}</p>
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {/* ── STEP 3: Results ── */}
+        {/* Step 3: Results */}
         {step === 3 && selectedPricing && (
           <div className="animate-fade-up max-w-2xl mx-auto">
             <div className="flex items-center justify-between mb-6">
@@ -135,7 +141,6 @@ export default function CourseSelector() {
               </button>
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {subject && (
                 <span className="text-white text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: subject.color }}>
@@ -149,17 +154,17 @@ export default function CourseSelector() {
               )}
             </div>
 
-            {/* Pricing cards */}
+            {/* Price cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
-              <div className="rounded-2xl p-7" style={{ backgroundColor: "#f4b400" }}>
-                <span className="text-xs font-bold bg-white/30 text-yellow-900 px-3 py-1 rounded-full">Online</span>
-                <p className="text-4xl font-black mt-4" style={{ color: "#0f172a" }}>{formatKz(selectedPricing.online)}</p>
-                <p className="text-sm font-semibold mt-1 text-yellow-900">Kz / hora</p>
+              <div className="rounded-2xl p-7" style={{ backgroundColor: "#16a34a" }}>
+                <span className="text-xs font-bold bg-white/25 text-white px-3 py-1 rounded-full">Online</span>
+                <p className="text-4xl font-black text-white mt-4">{formatKz(selectedPricing.online)}</p>
+                <p className="text-sm font-semibold mt-1 text-green-100">por hora</p>
               </div>
               <div className="rounded-2xl p-7" style={{ backgroundColor: "#0f172a" }}>
                 <span className="text-xs font-bold bg-white/15 text-white px-3 py-1 rounded-full">Ao Domicílio</span>
                 <p className="text-4xl font-black text-white mt-4">{formatKz(selectedPricing.domiciliar)}</p>
-                <p className="text-sm font-semibold mt-1 text-slate-400">Kz / hora</p>
+                <p className="text-sm font-semibold mt-1 text-slate-400">por hora</p>
               </div>
             </div>
 
@@ -178,7 +183,7 @@ export default function CourseSelector() {
             <div className="flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-5">
               <Clock size={16} className="text-amber-600 flex-shrink-0" />
               <p className="text-sm font-medium text-amber-800">
-                Sessões mínimas: <span className="font-bold">1h30 por dia</span>
+                As sessões devem ter no mínimo <strong>1h30</strong> para garantir melhor aproveitamento.
               </p>
             </div>
 
@@ -190,8 +195,8 @@ export default function CourseSelector() {
             {/* Expandable */}
             <button
               onClick={() => setExpanded(!expanded)}
-              className="flex items-center gap-2 text-sm font-semibold mb-4 transition-colors"
-              style={{ color: "#f4b400" }}
+              className="flex items-center gap-2 text-sm font-semibold mb-4 transition-colors hover:opacity-80"
+              style={{ color: "#16a34a" }}
             >
               <ChevronRight size={16} className={`transition-transform duration-300 ${expanded ? "rotate-90" : ""}`} />
               {expanded ? "Ocultar detalhes" : "Ver o que está incluído"}
@@ -218,12 +223,11 @@ export default function CourseSelector() {
               className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-full text-base transition-all duration-300 shadow-lg shadow-green-200 hover:scale-[1.02]"
             >
               <MessageCircle size={18} />
-              Receber detalhes no WhatsApp
+              Agendar Aula Gratuita no WhatsApp
               <ChevronRight size={16} />
             </a>
           </div>
         )}
-
       </div>
     </section>
   );

@@ -32,7 +32,7 @@ export default function EquipeSection() {
           <div>
             <span
               className="inline-block text-sm font-semibold tracking-widest uppercase mb-3"
-              style={{ color: "#f4b400" }}
+              style={{ color: "#16a34a" }}
             >
               A nossa equipa
             </span>

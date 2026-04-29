@@ -22,7 +22,7 @@ export default function InternationalSection() {
 
           {/* Left: text */}
           <div>
-            <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#f4b400" }}>
+            <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
               Alcance global, qualidade local
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6" style={{ color: "#0f172a" }}>

@@ -14,45 +14,45 @@ export const services: Service[] = [
     id: "explicacao",
     title: "Explicação",
     icon: "🎓",
-    shortDesc: "Sessões individuais focadas nas disciplinas mais desafiadoras.",
+    shortDesc: "Apoio direto nas matérias mais difíceis.",
     fullDesc:
-      "Aulas de explicação personalizadas com professores especializados na disciplina. Cada sessão é adaptada ao ritmo e necessidades do aluno, garantindo progressão eficaz e consolidação dos conteúdos.",
+      "Aulas individuais com professores especializados, adaptadas ao ritmo e necessidades de cada aluno.",
     when:
-      "Recomendado para alunos com dificuldades específicas numa disciplina, ou que pretendem aprofundar conhecimentos e melhorar a nota.",
+      "Para alunos com dificuldades numa disciplina específica ou que querem melhorar a nota.",
     benefits: [
       "Atenção 100% individualizada",
       "Progressão ao ritmo do aluno",
       "Material de apoio incluído",
       "Flexibilidade de horário",
     ],
-    color: "from-blue-500 to-blue-700",
+    color: "from-green-500 to-green-700",
   },
   {
     id: "apoio-escolar",
     title: "Apoio Escolar",
     icon: "📚",
-    shortDesc: "Acompanhamento regular para consolidar matérias e resolver dúvidas.",
+    shortDesc: "Acompanhamento contínuo ao longo do ano letivo.",
     fullDesc:
-      "Apoio escolar contínuo ao longo do ano letivo. O professor acompanha o currículo da escola do aluno, ajudando na compreensão das matérias, resolução de trabalhos de casa e preparação para testes.",
+      "O professor acompanha o currículo da escola, ajudando na compreensão das matérias e preparação para testes.",
     when:
-      "Ideal para alunos que precisam de um suporte consistente ao longo do ano, para acompanhar o ritmo escolar e evitar acumulação de dificuldades.",
+      "Para alunos que precisam de suporte consistente ao longo do ano letivo.",
     benefits: [
-      "Acompanhamento do currículo escolar",
-      "Ajuda com trabalhos de casa",
+      "Alinhamento com o currículo escolar",
+      "Apoio nos trabalhos de casa",
       "Preparação para testes e provas",
       "Relatório de progresso regular",
     ],
-    color: "from-green-500 to-green-700",
+    color: "from-blue-500 to-blue-700",
   },
   {
     id: "planos-revisao",
     title: "Planos de Revisão",
     icon: "🗓️",
-    shortDesc: "Planos estruturados de revisão antes de exames e avaliações.",
+    shortDesc: "Preparação estruturada para testes e avaliações.",
     fullDesc:
-      "Criação de um plano de revisão personalizado e estruturado, com calendário de sessões, organização dos temas e estratégias de memorização. Garante que o aluno está bem preparado para qualquer avaliação.",
+      "Plano de revisão personalizado com calendário de sessões, organização dos temas e técnicas de memorização.",
     when:
-      "Recomendado para períodos antes de exames, testes intercalares ou épocas de avaliação. Ideal para alunos que precisam de organização no estudo.",
+      "Antes de épocas de avaliação, exames ou testes intercalares.",
     benefits: [
       "Plano estruturado por temas",
       "Técnicas de memorização eficazes",
@@ -65,15 +65,15 @@ export const services: Service[] = [
     id: "preparacao-exames",
     title: "Preparação para Exames",
     icon: "🏆",
-    shortDesc: "Preparação intensiva para exames nacionais e internacionais.",
+    shortDesc: "Estratégia intensiva para exames nacionais.",
     fullDesc:
-      "Programa intensivo de preparação para exames nacionais, provas de acesso ao ensino superior e exames internacionais. Inclui simulações, correção detalhada e estratégias de exame.",
+      "Programa intensivo com simulações reais, correção detalhada e estratégias específicas para cada exame nacional.",
     when:
-      "Essencial para alunos a realizar exames nacionais do 12º ano, provas de ingresso universitário, ou exames de certificação internacional.",
+      "Para alunos do 12º ano, provas de acesso ao ensino superior ou exames internacionais.",
     benefits: [
       "Simulações com condições reais",
       "Análise detalhada de erros",
-      "Estratégias específicas para cada exame",
+      "Estratégias específicas por exame",
       "Intensificação progressiva",
     ],
     color: "from-purple-500 to-purple-700",

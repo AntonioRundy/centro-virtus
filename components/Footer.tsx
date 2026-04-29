@@ -11,7 +11,7 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a] border-t border-white/5 pt-16 pb-8">
+    <footer className="border-t border-white/5 pt-16 pb-8" style={{ backgroundColor: "#0f172a" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
@@ -22,10 +22,10 @@ export default function Footer() {
               <img src={asset("/logo.png")} alt="Centro de Estudo Galileu" className="h-9 w-auto object-contain" />
               <span className="font-extrabold text-white text-base leading-tight">
                 Centro de Estudo{" "}
-                <span style={{ color: "#f4b400" }}>Galileu</span>
+                <span style={{ color: "#16a34a" }}>Galileu</span>
               </span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "#64748b" }}>
               Acompanhamento escolar personalizado em Luanda. Online e ao domicílio.
             </p>
             <a
@@ -34,7 +34,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition-all duration-300"
             >
-              <MessageCircle size={13} /> Fale Connosco
+              <MessageCircle size={13} /> Agendar Aula
             </a>
           </div>
 
@@ -45,7 +45,9 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {items.map((item) => (
                   <li key={item}>
-                    <span className="text-slate-400 text-sm hover:text-slate-200 transition-colors cursor-default">{item}</span>
+                    <span className="text-sm cursor-default transition-colors hover:text-slate-300" style={{ color: "#64748b" }}>
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -53,7 +55,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-xs">
+        <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
+          style={{ borderColor: "rgba(255,255,255,0.08)", color: "#475569" }}>
           <p>© {new Date().getFullYear()} Centro de Estudo Galileu. Todos os direitos reservados.</p>
           <p>Feito com dedicação em Luanda, Angola 🇦🇴</p>
         </div>

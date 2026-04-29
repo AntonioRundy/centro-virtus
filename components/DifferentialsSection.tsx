@@ -13,7 +13,7 @@ export default function DifferentialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#f4b400" }}>
+          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             Por que nos escolher
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
@@ -57,7 +57,7 @@ export default function DifferentialsSection() {
             <div
               key={label}
               className="py-8 text-center px-4"
-              style={dark ? { backgroundColor: "#f4b400" } : { backgroundColor: "#ffffff" }}
+              style={dark ? { backgroundColor: "#16a34a" } : { backgroundColor: "#ffffff" }}
             >
               <p className={`text-3xl font-black ${dark ? "" : "gradient-text"}`} style={dark ? { color: "#0f172a" } : {}}>
                 {value}
