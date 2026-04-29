@@ -1,20 +1,20 @@
 import { Shield, GraduationCap, Users, Star } from "lucide-react";
 
 const credentials = [
-  { icon: Star,          title: "Mais de 5 Anos de Experiência", desc: "Os nossos professores acumulam anos de prática no acompanhamento de alunos de diferentes níveis e perfis." },
-  { icon: GraduationCap, title: "Professores Qualificados",      desc: "Formação académica superior na área em que lecionam — rigor e qualidade em cada sessão."                   },
-  { icon: Users,         title: "Dedicação e Paixão",            desc: "Os nossos professores transmitem motivação e entusiasmo — ingredientes essenciais para o sucesso."           },
-  { icon: Shield,        title: "Múltiplos Currículos",          desc: "Experiência comprovada com currículos angolano, português e internacional (IB/British)."                     },
+  { icon: Star,          title: "Mais de 5 Anos de Experiência", desc: "Prática no acompanhamento de alunos de diferentes níveis, perfis e sistemas de ensino."      },
+  { icon: GraduationCap, title: "Professores Qualificados",      desc: "Formação académica superior — rigor e qualidade garantidos em cada sessão."                  },
+  { icon: Users,         title: "Dedicação e Paixão",            desc: "Motivação e entusiasmo transmitidos em cada aula — ingredientes essenciais para o sucesso."  },
+  { icon: Shield,        title: "Múltiplos Currículos",          desc: "Experiência com currículos angolano, português e internacional (IB/British)."                  },
 ];
 
 export default function TeamSection() {
   return (
-    <section className="section-gray py-20 lg:py-32">
+    <section className="section-white py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
-            A nossa equipa
+            Credenciais
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
             Professores <span className="gradient-text">Qualificados</span>
@@ -24,19 +24,16 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* Credential cards — BLUE */}
+        {/* Cards — institutional blue */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {credentials.map(({ icon: Icon, title, desc }) => (
-            <div
-              key={title}
-              className="card-lift rounded-2xl p-7 text-center"
-              style={{ backgroundColor: "#3b82f6", boxShadow: "0 10px 30px rgba(59,130,246,0.25)" }}
-            >
-              <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-5">
+            <div key={title} className="card-lift rounded-2xl p-7 text-center"
+              style={{ backgroundColor: "#1e3a8a", boxShadow: "0 12px 30px rgba(30,58,138,0.28)" }}>
+              <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-5">
                 <Icon size={28} className="text-white" />
               </div>
               <h3 className="font-bold text-base text-white mb-3">{title}</h3>
-              <p className="text-sm leading-relaxed text-blue-100">{desc}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "#bfdbfe" }}>{desc}</p>
             </div>
           ))}
         </div>
@@ -48,12 +45,15 @@ export default function TeamSection() {
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
             </div>
             <p className="text-lg leading-relaxed italic" style={{ color: "#334155" }}>
-              "O acompanhamento personalizado do Centro de Estudo Galileu transformou a relação do meu filho com a Matemática.
+              "O Centro de Estudo Galileu transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."
             </p>
-            <p className="text-sm mt-4" style={{ color: "#64748b" }}>— Encarregado de educação, aluno do 9º ano</p>
+            <p className="text-sm mt-4" style={{ color: "#64748b" }}>
+              — Encarregado de educação, aluno do 9º ano
+            </p>
           </div>
         </div>
+
       </div>
     </section>
   );

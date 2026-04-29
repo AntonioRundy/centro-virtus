@@ -4,15 +4,15 @@
 :root {
   --green:        #16a34a;
   --green-dark:   #15803d;
-  --blue:         #2563eb;
-  --blue-dark:    #1d4ed8;
+  --blue:         #1e3a8a;
+  --blue-mid:     #2563eb;
   --gold:         #d4af37;
   --gold-dark:    #b8962e;
-  --gold-light:   #fdf6d8;
-  --text-heading: #0f172a;
-  --text-body:    #334155;
-  --text-muted:   #64748b;
-  --bg-main:      #f8fafc;
+  --black:        #020617;
+  --heading:      #0f172a;
+  --body:         #334155;
+  --muted:        #64748b;
+  --bg-soft:      #f8fafc;
   --border:       #e2e8f0;
 }
 
@@ -25,11 +25,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Sections ────────────────────────────────────────── */
+/* ── Section helpers ─────────────────────────────────── */
 .section-white { background-color: #ffffff; }
 .section-gray  { background-color: #f8fafc; }
+.section-dark  { background-color: #020617; }
 
-/* ── Gradient headline (green → gold) ───────────────── */
+/* ── Gradient headline — green to gold ──────────────── */
 .gradient-text {
   background: linear-gradient(135deg, #16a34a 0%, #d4af37 100%);
   -webkit-background-clip: text;
@@ -48,12 +49,12 @@ body {
 .card-lift { transition: all 0.3s ease; }
 .card-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
 }
 
 /* ── Keyframes ──────────────────────────────────────── */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(22px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 @keyframes fadeIn {
@@ -68,9 +69,13 @@ body {
   0%, 100% { box-shadow: 0 0 0 0    rgba(22, 163, 74, 0.50); }
   50%       { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);   }
 }
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center;  }
+}
 
-.animate-fade-up     { animation: fadeInUp   0.55s ease-out both; }
-.animate-fade-in     { animation: fadeIn     0.35s ease-out both; }
+.animate-fade-up     { animation: fadeInUp   0.6s ease-out both; }
+.animate-fade-in     { animation: fadeIn     0.4s ease-out both; }
 .animate-slide-right { animation: slideRight 0.35s ease-out both; }
 .animate-pulse-glow  { animation: pulseGlow  2s ease-in-out infinite; }
 
@@ -78,6 +83,7 @@ body {
 .delay-200 { animation-delay: 0.20s; }
 .delay-300 { animation-delay: 0.30s; }
 .delay-400 { animation-delay: 0.40s; }
+.delay-500 { animation-delay: 0.50s; }
 
 /* ── Divider ────────────────────────────────────────── */
 .section-divider {

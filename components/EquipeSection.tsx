@@ -1,5 +1,7 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, CalendarCheck } from "lucide-react";
 import { asset } from "@/lib/basePath";
+
+const WA_FULL = `https://wa.me/244946038986?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudo Galileu.")}`;
 
 const highlights = [
   "Professores com formação académica superior",
@@ -11,13 +13,14 @@ const highlights = [
 
 export default function EquipeSection() {
   return (
-    <section id="equipe" className="section-white py-20 lg:py-32">
+    <section id="equipe" className="section-gray py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT: image */}
           <div>
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-slate-50">
+            <div className="rounded-2xl overflow-hidden bg-slate-100"
+              style={{ boxShadow: "0 20px 48px rgba(0,0,0,0.12)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={asset("/equipe.png")}
@@ -30,26 +33,18 @@ export default function EquipeSection() {
 
           {/* RIGHT: text */}
           <div>
-            <span
-              className="inline-block text-sm font-semibold tracking-widest uppercase mb-3"
-              style={{ color: "#16a34a" }}
-            >
+            <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
               A nossa equipa
             </span>
 
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight"
-              style={{ color: "#0f172a" }}
-            >
-              Uma equipa{" "}
-              <span className="gradient-text">dedicada</span> e preparada
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight" style={{ color: "#0f172a" }}>
+              Professores <span className="gradient-text">dedicados</span>,{" "}
+              focados no sucesso de cada aluno.
             </h2>
 
             <p className="text-lg leading-relaxed mb-8" style={{ color: "#334155" }}>
-              Uma equipa dedicada, preparada para acompanhar cada aluno com excelência.
-              Os nossos professores não são apenas especialistas nas suas áreas —
-              são educadores que acreditam no potencial de cada estudante e trabalham
-              para o ajudar a alcançá-lo.
+              Não somos apenas especialistas nas nossas áreas — somos educadores que acreditam
+              no potencial de cada estudante e trabalham diariamente para o ajudar a alcançá-lo.
             </p>
 
             <ul className="space-y-3 mb-10">
@@ -63,13 +58,13 @@ export default function EquipeSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/244946038986"
+                href={WA_FULL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#f4b400] hover:bg-[#e0a800] font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-md shadow-yellow-200"
-                style={{ color: "#0f172a" }}
+                className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-md shadow-green-200"
               >
-                Conhecer a Equipa
+                <CalendarCheck size={16} />
+                Agendar Aula Gratuita
               </a>
               <a
                 href="#contacto"
