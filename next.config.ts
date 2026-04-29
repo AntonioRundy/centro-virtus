@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/centro-galileu1",
+  basePath: "/centro-galileu3",
   trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
