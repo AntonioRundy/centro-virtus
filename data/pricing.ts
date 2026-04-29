@@ -20,7 +20,7 @@ export const pricing: Record<PricingLevel, LevelPricing> = {
     features: [
       "Suporte completo por disciplina",
       "Metodologia adaptada à idade",
-      "Relatório de progresso mensal",
+      "Relatório de progresso regular",
       "Aula experimental gratuita",
     ],
   },
@@ -69,28 +69,8 @@ export const pricing: Record<PricingLevel, LevelPricing> = {
 };
 
 export const subjects = [
-  {
-    id: "matematica",
-    name: "Matemática",
-    icon: "📐",
-    description: "Álgebra, geometria, cálculo e resolução de problemas.",
-  },
-  {
-    id: "fisica",
-    name: "Física",
-    icon: "⚛️",
-    description: "Mecânica, termodinâmica, eletricidade e óptica.",
-  },
-  {
-    id: "ingles",
-    name: "Inglês",
-    icon: "🌍",
-    description: "Conversação, gramática e preparação para exames internacionais.",
-  },
-  {
-    id: "exames",
-    name: "Preparação para Exames",
-    icon: "📝",
-    description: "Treino específico para exames nacionais e provas de acesso.",
-  },
+  { id: "matematica", name: "Matemática",              icon: "📐", description: "Álgebra, geometria, cálculo e resolução de problemas."         },
+  { id: "fisica",     name: "Física",                  icon: "⚛️", description: "Mecânica, termodinâmica, eletricidade e óptica."               },
+  { id: "ingles",     name: "Inglês",                  icon: "🌍", description: "Conversação, gramática e preparação para exames internacionais." },
+  { id: "exames",     name: "Preparação para Exames",  icon: "📝", description: "Treino específico para exames nacionais e provas de acesso."    },
 ];

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ── Colour & typography tokens ──────────────────────── */
+/* ── Colour tokens ───────────────────────────────────── */
 :root {
   --yellow:       #f4b400;
   --yellow-hover: #e0a800;
@@ -10,7 +10,6 @@
   --text-body:    #334155;
   --text-muted:   #64748b;
   --bg-main:      #f8fafc;
-  --bg-alt:       #eef2f7;
   --border:       #e2e8f0;
 }
 
@@ -36,13 +35,21 @@ body {
   background-clip: text;
 }
 
+/* ── Elevated card — base style ─────────────────────── */
+/* Use alongside rounded-* and bg-white in components.  */
+.card-elevated {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 /* ── Card hover lift ────────────────────────────────── */
 .card-lift {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.3s ease;
 }
 .card-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.13);
 }
 
 /* ── Keyframes ──────────────────────────────────────── */
