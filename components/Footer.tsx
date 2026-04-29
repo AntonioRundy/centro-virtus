@@ -11,7 +11,7 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-[#0f172a] border-t border-white/5 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
@@ -19,26 +19,22 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={asset("/logo.png")}
-                alt="Centro Galileu"
-                className="h-9 w-auto object-contain"
-              />
-              <span className="font-extrabold text-white text-lg">
-                Centro <span style={{ color: "#f4b400" }}>Galileu</span>
+              <img src={asset("/logo.png")} alt="Centro de Estudo Galileu" className="h-9 w-auto object-contain" />
+              <span className="font-extrabold text-white text-base leading-tight">
+                Centro de Estudo{" "}
+                <span style={{ color: "#f4b400" }}>Galileu</span>
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5">
+            <p className="text-slate-400 text-sm leading-relaxed mb-5">
               Acompanhamento escolar personalizado em Luanda. Online e ao domicílio.
             </p>
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition-all duration-300"
             >
-              <MessageCircle size={13} />
-              Fale Connosco
+              <MessageCircle size={13} /> Fale Connosco
             </a>
           </div>
 
@@ -49,9 +45,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {items.map((item) => (
                   <li key={item}>
-                    <span className="text-gray-400 text-sm hover:text-gray-200 transition-colors cursor-default">
-                      {item}
-                    </span>
+                    <span className="text-slate-400 text-sm hover:text-slate-200 transition-colors cursor-default">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -59,8 +53,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-gray-500 text-xs">
-          <p>© {new Date().getFullYear()} Centro de Estudos Galileu. Todos os direitos reservados.</p>
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-xs">
+          <p>© {new Date().getFullYear()} Centro de Estudo Galileu. Todos os direitos reservados.</p>
           <p>Feito com dedicação em Luanda, Angola 🇦🇴</p>
         </div>
       </div>

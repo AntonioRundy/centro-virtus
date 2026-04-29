@@ -37,7 +37,7 @@ export default function TeamSection() {
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
             </div>
             <p className="text-gray-700 text-lg leading-relaxed italic">
-              "O acompanhamento personalizado do Centro Galileu transformou a relação do meu filho com a Matemática.
+              "O acompanhamento personalizado do Centro de Estudo Galileu transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."
             </p>
             <p className="text-gray-500 text-sm mt-4">— Encarregado de educação, aluno do 9º ano</p>

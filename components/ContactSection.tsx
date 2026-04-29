@@ -1,7 +1,7 @@
 import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 
 const WA_URL  = "https://wa.me/244946038986";
-const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o Centro de Estudos Galileu.")}`;
+const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o Centro de Estudo Galileu.")}`;
 const MAIL    = "mailto:centrogalileu@gmail.com";
 
 export default function ContactSection() {

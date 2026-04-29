@@ -5,10 +5,10 @@ import "./globals.css";
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Centro de Estudos Galileu | Acompanhamento Escolar Personalizado",
+  title: "Centro de Estudo Galileu | Acompanhamento Escolar Personalizado",
   description:
     "Acompanhamento escolar personalizado em Luanda. Explicações, apoio escolar e preparação para exames — online e ao domicílio.",
-  keywords: ["explicações", "apoio escolar", "Luanda", "Centro Galileu", "preparação exames"],
+  keywords: ["explicações", "apoio escolar", "Luanda", "Centro de Estudo Galileu", "preparação exames"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

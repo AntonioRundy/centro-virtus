@@ -1,54 +1,53 @@
 @import "tailwindcss";
 
-/* ── Colour tokens ───────────────────────────────────── */
+/* ── Colour & typography tokens ──────────────────────── */
 :root {
-  --yellow:        #f4b400;
-  --yellow-hover:  #e0a800;
-  --yellow-light:  #fffbeb;
-  --yellow-border: #fde68a;
-  --green:         #16a34a;
-  --green-hover:   #15803d;
-  --bg-main:       #f5f7fa;
-  --bg-white:      #ffffff;
-  --text-heading:  #111827;
-  --text-body:     #374151;
-  --text-muted:    #6b7280;
-  --border:        #e5e7eb;
+  --yellow:       #f4b400;
+  --yellow-hover: #e0a800;
+  --green:        #16a34a;
+  --green-dark:   #15803d;
+  --text-heading: #0f172a;
+  --text-body:    #334155;
+  --text-muted:   #64748b;
+  --bg-main:      #f8fafc;
+  --bg-alt:       #eef2f7;
+  --border:       #e2e8f0;
 }
 
 /* ── Base ────────────────────────────────────────────── */
-html  { scroll-behavior: smooth; }
-body  {
-  background-color: #f5f7fa;
-  color: #374151;
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #f8fafc;
+  color: #334155;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Gradient text (yellow-amber) ───────────────────── */
+/* ── Section backgrounds ─────────────────────────────── */
+.section-white { background-color: #ffffff; }
+.section-gray  { background-color: #f8fafc; }
+
+/* ── Gradient headline text ─────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #d97706 0%, #f4b400 100%);
+  background: linear-gradient(135deg, #c28000 0%, #f4b400 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-/* ── Section backgrounds ─────────────────────────────── */
-.section-white { background-color: #ffffff; }
-.section-gray  { background-color: #f5f7fa; }
 
 /* ── Card hover lift ────────────────────────────────── */
 .card-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
 }
 
 /* ── Keyframes ──────────────────────────────────────── */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 @keyframes fadeIn {
@@ -56,11 +55,11 @@ body  {
   to   { opacity: 1; }
 }
 @keyframes slideRight {
-  from { opacity: 0; transform: translateX(16px); }
+  from { opacity: 0; transform: translateX(14px); }
   to   { opacity: 1; transform: translateX(0);    }
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(22, 163, 74, 0.50); }
+  0%, 100% { box-shadow: 0 0 0 0    rgba(22, 163, 74, 0.5); }
   50%       { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);   }
 }
 
@@ -76,12 +75,12 @@ body  {
 
 /* ── Divider ────────────────────────────────────────── */
 .section-divider {
-  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
   height: 1px;
 }
 
 /* ── Scrollbar ──────────────────────────────────────── */
 ::-webkit-scrollbar         { width: 6px; }
-::-webkit-scrollbar-track   { background: #f5f7fa; }
-::-webkit-scrollbar-thumb   { background: #d1d5db; border-radius: 4px; }
+::-webkit-scrollbar-track   { background: #f8fafc; }
+::-webkit-scrollbar-thumb   { background: #cbd5e1; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #f4b400; }
