@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const navLinks = [
   { label: "Metodologia", href: "#metodologia" },
@@ -16,7 +16,7 @@ const WA_URL = "https://wa.me/244946038986";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled]  = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -28,25 +28,22 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-white/97 backdrop-blur-md shadow-md border-b border-gray-100"
+          : "bg-white/90 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
-          <div className="relative w-10 h-10 flex-shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Centro Galileu"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset("/logo.png")}
+            alt="Centro Galileu"
+            className="h-10 w-auto object-contain"
+          />
           <span className="font-extrabold text-gray-900 text-lg leading-tight hidden sm:block">
-            Centro <span className="text-yellow-500">Galileu</span>
+            Centro <span style={{ color: "#f4b400" }}>Galileu</span>
           </span>
         </a>
 
@@ -56,7 +53,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-gray-600 hover:text-yellow-600 text-sm font-medium transition-colors duration-200 relative group"
+                className="relative text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors duration-200 group"
               >
                 {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-200 rounded-full" />
@@ -70,7 +67,7 @@ export default function Navbar() {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-green-500/30 hover:shadow-lg"
+          className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-green-600/25"
         >
           Fale Connosco
         </a>
@@ -94,7 +91,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 text-sm font-medium transition-colors"
+                  className="block px-4 py-3 rounded-xl text-gray-700 hover:bg-yellow-50 hover:text-yellow-800 text-sm font-medium transition-colors"
                 >
                   {link.label}
                 </a>
@@ -105,7 +102,7 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-full transition-colors"
+            className="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-full transition-colors"
           >
             Fale Connosco
           </a>

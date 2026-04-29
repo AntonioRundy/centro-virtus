@@ -2,30 +2,32 @@
 
 /* ── Colour tokens ───────────────────────────────────── */
 :root {
-  --yellow:        #f5c518;
-  --yellow-hover:  #e6b800;
+  --yellow:        #f4b400;
+  --yellow-hover:  #e0a800;
   --yellow-light:  #fffbeb;
   --yellow-border: #fde68a;
   --green:         #16a34a;
   --green-hover:   #15803d;
-  --gray-dark:     #111827;
-  --gray-mid:      #6b7280;
-  --gray-light:    #f9fafb;
+  --bg-main:       #f5f7fa;
+  --bg-white:      #ffffff;
+  --text-heading:  #111827;
+  --text-body:     #374151;
+  --text-muted:    #6b7280;
   --border:        #e5e7eb;
 }
 
 /* ── Base ────────────────────────────────────────────── */
 html  { scroll-behavior: smooth; }
 body  {
-  background-color: #ffffff;
-  color: #111827;
+  background-color: #f5f7fa;
+  color: #374151;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Gradient text (yellow → amber) ─────────────────── */
+/* ── Gradient text (yellow-amber) ───────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #d97706 0%, #f4b400 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -33,7 +35,7 @@ body  {
 
 /* ── Section backgrounds ─────────────────────────────── */
 .section-white { background-color: #ffffff; }
-.section-gray  { background-color: #f9fafb; }
+.section-gray  { background-color: #f5f7fa; }
 
 /* ── Card hover lift ────────────────────────────────── */
 .card-lift {
@@ -41,7 +43,7 @@ body  {
 }
 .card-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
 }
 
 /* ── Keyframes ──────────────────────────────────────── */
@@ -62,10 +64,10 @@ body  {
   50%       { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);   }
 }
 
-.animate-fade-up     { animation: fadeInUp  0.55s ease-out both; }
-.animate-fade-in     { animation: fadeIn    0.35s ease-out both; }
+.animate-fade-up     { animation: fadeInUp   0.55s ease-out both; }
+.animate-fade-in     { animation: fadeIn     0.35s ease-out both; }
 .animate-slide-right { animation: slideRight 0.35s ease-out both; }
-.animate-pulse-glow  { animation: pulseGlow 2s ease-in-out infinite; }
+.animate-pulse-glow  { animation: pulseGlow  2s ease-in-out infinite; }
 
 .delay-100 { animation-delay: 0.10s; }
 .delay-200 { animation-delay: 0.20s; }
@@ -74,12 +76,12 @@ body  {
 
 /* ── Divider ────────────────────────────────────────── */
 .section-divider {
-  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
   height: 1px;
 }
 
 /* ── Scrollbar ──────────────────────────────────────── */
 ::-webkit-scrollbar         { width: 6px; }
-::-webkit-scrollbar-track   { background: #f9fafb; }
+::-webkit-scrollbar-track   { background: #f5f7fa; }
 ::-webkit-scrollbar-thumb   { background: #d1d5db; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #f5c518; }
+::-webkit-scrollbar-thumb:hover { background: #f4b400; }
