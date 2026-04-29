@@ -5,11 +5,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // When deploying to GitHub Pages at github.com/<user>/<repo>,
-  // set NEXT_PUBLIC_BASE_PATH to "/<repo-name>" in your GitHub Actions env.
-  // Leave empty if using a custom domain (e.g., username.github.io).
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
+  basePath: "/centro-galileu1",
   trailingSlash: true,
 };
+
+export default nextConfig;
 
 export default nextConfig;
