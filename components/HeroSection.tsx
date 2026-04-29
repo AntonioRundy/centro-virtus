@@ -88,7 +88,7 @@ export default function HeroSection() {
           <div className="order-1 lg:order-2 animate-fade-up delay-200">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-gray-200 aspect-[4/5] lg:aspect-[3/4] bg-yellow-50">
               <Image
-                src="/hero.jpg"
+                src="/hero.png"
                 alt="Aluno a estudar com professor do Centro Galileu"
                 fill
                 className="object-cover"
