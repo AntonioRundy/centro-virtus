@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { CheckCircle, ChevronRight, MessageCircle, RotateCcw, Clock, Info } from "lucide-react";
-import { pricing, subjects, PricingLevel } from "@/data/pricing";
+import { pricing, subjects, Subject, PricingLevel } from "@/data/pricing";
 
 const levels: { key: PricingLevel; label: string; range: string }[] = [
-  { key: "A", label: "Nível A", range: "1º–6º Ano"    },
-  { key: "B", label: "Nível B", range: "7º–9º Ano"    },
-  { key: "C", label: "Nível C", range: "10º–12º Ano"  },
-  { key: "D", label: "Nível D", range: "Universidade"  },
+  { key: "A", label: "Nível A", range: "1º–6º Ano"   },
+  { key: "B", label: "Nível B", range: "7º–9º Ano"   },
+  { key: "C", label: "Nível C", range: "10º–12º Ano" },
+  { key: "D", label: "Nível D", range: "Universidade" },
 ];
 
 const WA_URL = "https://wa.me/244946038986";
@@ -19,7 +19,7 @@ function formatKz(n: number) {
 
 export default function CourseSelector() {
   const [step, setStep]         = useState<1 | 2 | 3>(1);
-  const [subject, setSubject]   = useState<(typeof subjects)[0] | null>(null);
+  const [subject, setSubject]   = useState<Subject | null>(null);
   const [level, setLevel]       = useState<PricingLevel | null>(null);
   const [expanded, setExpanded] = useState(false);
 
@@ -48,14 +48,11 @@ export default function CourseSelector() {
         <div className="flex items-center justify-center gap-2 mb-12">
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex items-center gap-2">
-              <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                step > s
-                  ? "text-[#0f172a]"
-                  : step === s
-                  ? "border-2 border-[#f4b400] text-[#f4b400]"
-                  : "bg-slate-100 text-slate-400"
-              }`}
-                style={step > s ? { backgroundColor: "#f4b400" } : {}}
+              <div
+                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                  step === s ? "border-2 border-[#f4b400] text-[#f4b400]" : step < s ? "bg-slate-100 text-slate-400" : ""
+                }`}
+                style={step > s ? { backgroundColor: "#f4b400", color: "#0f172a" } : {}}
               >
                 {step > s ? <CheckCircle size={16} /> : s}
               </div>
@@ -66,29 +63,33 @@ export default function CourseSelector() {
           ))}
         </div>
 
-        {/* ── STEP 1: Subject ── */}
+        {/* ── STEP 1: Subject — individual colors ── */}
         {step === 1 && (
           <div className="animate-fade-up">
             <h3 className="text-xl font-bold text-center mb-8" style={{ color: "#0f172a" }}>
               Passo 1 — Qual é a disciplina?
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
               {subjects.map((s) => (
                 <button
                   key={s.id}
                   onClick={() => { setSubject(s); setStep(2); }}
-                  className="card-elevated card-lift group rounded-2xl p-6 text-center hover:border-[#f4b400] cursor-pointer"
+                  className="card-lift group rounded-2xl p-5 text-center cursor-pointer"
+                  style={{
+                    backgroundColor: s.color,
+                    boxShadow: `0 10px 28px ${s.color}44`,
+                  }}
                 >
                   <div className="text-4xl mb-3">{s.icon}</div>
-                  <p className="font-semibold text-sm" style={{ color: "#0f172a" }}>{s.name}</p>
-                  <p className="text-xs mt-1 leading-tight" style={{ color: "#64748b" }}>{s.description}</p>
+                  <p className="font-semibold text-sm text-white">{s.name}</p>
+                  <p className="text-xs mt-1 leading-tight text-white/75">{s.description}</p>
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {/* ── STEP 2: Level ── */}
+        {/* ── STEP 2: Level — GREEN ── */}
         {step === 2 && (
           <div className="animate-fade-up">
             <div className="flex items-center justify-between mb-8">
@@ -98,7 +99,10 @@ export default function CourseSelector() {
               </button>
             </div>
             {subject && (
-              <div className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-300 text-yellow-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+              <div
+                className="inline-flex items-center gap-2 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6"
+                style={{ backgroundColor: subject.color }}
+              >
                 {subject.icon} {subject.name} selecionado
               </div>
             )}
@@ -107,13 +111,14 @@ export default function CourseSelector() {
                 <button
                   key={l.key}
                   onClick={() => { setLevel(l.key); setStep(3); }}
-                  className="card-elevated card-lift group rounded-2xl p-6 text-center hover:border-[#f4b400] cursor-pointer"
+                  className="card-lift group rounded-2xl p-6 text-center cursor-pointer"
+                  style={{ backgroundColor: "#16a34a", boxShadow: "0 10px 28px rgba(22,163,74,0.25)" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-800 font-black text-xl mx-auto mb-3">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-black text-xl mx-auto mb-3">
                     {l.key}
                   </div>
-                  <p className="font-bold text-sm" style={{ color: "#0f172a" }}>{l.label}</p>
-                  <p className="text-xs mt-1" style={{ color: "#64748b" }}>{l.range}</p>
+                  <p className="font-bold text-sm text-white">{l.label}</p>
+                  <p className="text-xs mt-1 text-green-100">{l.range}</p>
                 </button>
               ))}
             </div>
@@ -130,10 +135,10 @@ export default function CourseSelector() {
               </button>
             </div>
 
-            {/* Selected tags */}
+            {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {subject && (
-                <span className="bg-yellow-50 border border-yellow-300 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="text-white text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: subject.color }}>
                   {subject.icon} {subject.name}
                 </span>
               )}
@@ -144,40 +149,32 @@ export default function CourseSelector() {
               )}
             </div>
 
-            {/* ── Pricing cards ── */}
+            {/* Pricing cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
-              {/* Online */}
               <div className="rounded-2xl p-7" style={{ backgroundColor: "#f4b400" }}>
                 <span className="text-xs font-bold bg-white/30 text-yellow-900 px-3 py-1 rounded-full">Online</span>
-                <p className="text-4xl font-black mt-4" style={{ color: "#0f172a" }}>
-                  {formatKz(selectedPricing.online)}
-                </p>
+                <p className="text-4xl font-black mt-4" style={{ color: "#0f172a" }}>{formatKz(selectedPricing.online)}</p>
                 <p className="text-sm font-semibold mt-1 text-yellow-900">Kz / hora</p>
               </div>
-
-              {/* Domiciliar */}
               <div className="rounded-2xl p-7" style={{ backgroundColor: "#0f172a" }}>
                 <span className="text-xs font-bold bg-white/15 text-white px-3 py-1 rounded-full">Ao Domicílio</span>
-                <p className="text-4xl font-black text-white mt-4">
-                  {formatKz(selectedPricing.domiciliar)}
-                </p>
+                <p className="text-4xl font-black text-white mt-4">{formatKz(selectedPricing.domiciliar)}</p>
                 <p className="text-sm font-semibold mt-1 text-slate-400">Kz / hora</p>
               </div>
             </div>
 
-            {/* ── Pricing explanation ── */}
+            {/* Explanation */}
             <div className="card-elevated rounded-2xl p-5 mb-4 flex gap-3">
               <Info size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm font-semibold mb-0.5" style={{ color: "#0f172a" }}>Como funciona?</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>
-                  O encarregado pode montar o plano de acordo com as horas desejadas.
-                  O preço indicado é por hora de aula.
+                  O encarregado pode montar o plano de acordo com as horas desejadas. O preço indicado é por hora de aula.
                 </p>
               </div>
             </div>
 
-            {/* ── Minimum session note ── */}
+            {/* Minimum session */}
             <div className="flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-5">
               <Clock size={16} className="text-amber-600 flex-shrink-0" />
               <p className="text-sm font-medium text-amber-800">
@@ -187,21 +184,16 @@ export default function CourseSelector() {
 
             {/* Description */}
             <div className="card-elevated rounded-2xl p-6 mb-4">
-              <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>
-                {selectedPricing.description}
-              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>{selectedPricing.description}</p>
             </div>
 
-            {/* Expandable details */}
+            {/* Expandable */}
             <button
               onClick={() => setExpanded(!expanded)}
               className="flex items-center gap-2 text-sm font-semibold mb-4 transition-colors"
               style={{ color: "#f4b400" }}
             >
-              <ChevronRight
-                size={16}
-                className={`transition-transform duration-300 ${expanded ? "rotate-90" : ""}`}
-              />
+              <ChevronRight size={16} className={`transition-transform duration-300 ${expanded ? "rotate-90" : ""}`} />
               {expanded ? "Ocultar detalhes" : "Ver o que está incluído"}
             </button>
 
@@ -219,7 +211,6 @@ export default function CourseSelector() {
               </div>
             )}
 
-            {/* CTA */}
             <a
               href={WA_URL}
               target="_blank"

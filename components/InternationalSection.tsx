@@ -1,10 +1,10 @@
 import { Globe, CheckCircle } from "lucide-react";
 
 const schools = [
-  { abbr: "EPL",  name: "Escola Portuguesa de Luanda",   flag: "🇵🇹", desc: "Currículo português, 1º ao 12º ano." },
-  { abbr: "CCB",  name: "Camilo Castelo Branco",          flag: "📚",  desc: "Ensino angolano, currículo nacional." },
-  { abbr: "LIS",  name: "Luanda International School",    flag: "🌐",  desc: "Currículo IB/British. Apoio em inglês." },
-  { abbr: "CAT",  name: "Colégio Angolano de Talatona",   flag: "🏫",  desc: "Currículo angolano especializado." },
+  { abbr: "EPL",  name: "Escola Portuguesa de Luanda",  flag: "🇵🇹", desc: "Currículo português, 1º ao 12º ano."     },
+  { abbr: "CCB",  name: "Camilo Castelo Branco",         flag: "📚",  desc: "Ensino angolano, currículo nacional."   },
+  { abbr: "LIS",  name: "Luanda International School",   flag: "🌐",  desc: "Currículo IB/British. Apoio em inglês." },
+  { abbr: "CAT",  name: "Colégio Angolano de Talatona",  flag: "🏫",  desc: "Currículo angolano especializado."      },
 ];
 
 const highlights = [
@@ -20,6 +20,7 @@ export default function InternationalSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+          {/* Left: text */}
           <div>
             <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#f4b400" }}>
               Alcance global, qualidade local
@@ -42,18 +43,25 @@ export default function InternationalSection() {
             </ul>
           </div>
 
+          {/* Right: school cards — GREEN */}
           <div className="grid grid-cols-2 gap-5">
             {schools.map(({ abbr, name, flag, desc }) => (
-              <div key={abbr} className="card-elevated card-lift rounded-2xl p-6 hover:border-[#f4b400] transition-all duration-300">
+              <div
+                key={abbr}
+                className="card-lift rounded-2xl p-6"
+                style={{ backgroundColor: "#22c55e", boxShadow: "0 10px 28px rgba(34,197,94,0.25)" }}
+              >
                 <div className="text-3xl mb-3">{flag}</div>
-                <p className="font-bold text-sm" style={{ color: "#0f172a" }}>{abbr}</p>
-                <p className="text-xs font-medium mb-2" style={{ color: "#f4b400" }}>{name}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
+                <p className="font-bold text-sm text-white">{abbr}</p>
+                <p className="text-xs font-medium mb-2 text-green-100">{name}</p>
+                <p className="text-xs leading-relaxed text-green-50">{desc}</p>
               </div>
             ))}
           </div>
+
         </div>
 
+        {/* Banner */}
         <div className="mt-14 rounded-2xl bg-yellow-50 border border-yellow-200 p-8 flex flex-col sm:flex-row items-center gap-5">
           <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
             <Globe size={26} className="text-yellow-700" />
