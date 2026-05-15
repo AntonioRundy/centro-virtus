@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /centro-galileu3
+          NEXT_PUBLIC_BASE_PATH: /centro-virtus
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
