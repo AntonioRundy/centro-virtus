@@ -3,10 +3,24 @@ import { asset } from "@/lib/basePath";
 
 const WA_URL = "https://wa.me/244946038986";
 
-const links = {
-  "Serviços":  ["Explicação", "Apoio Escolar", "Planos de Revisão", "Preparação para Exames"],
-  "Escolas":   ["Escola Portuguesa de Luanda", "Camilo Castelo Branco", "Luanda Int. School", "Colégio Angolano de Talatona"],
-  "Contacto":  ["+244 946 038 986", "centrogalileu@gmail.com", "Luanda, Angola"],
+const links: Record<string, { label: string; href: string }[]> = {
+  "Serviços": [
+    { label: "Explicação",              href: "#servicos" },
+    { label: "Apoio Escolar",           href: "#servicos" },
+    { label: "Planos de Revisão",       href: "#servicos" },
+    { label: "Preparação para Exames",  href: "#servicos" },
+  ],
+  "Escolas": [
+    { label: "Escola Portuguesa de Luanda", href: "#escolas" },
+    { label: "Camilo Castelo Branco",        href: "#escolas" },
+    { label: "Luanda Int. School",           href: "#escolas" },
+    { label: "Colégio Angolano de Talatona", href: "#escolas" },
+  ],
+  "Contacto": [
+    { label: "+244 946 038 986",       href: "tel:+244946038986"           },
+    { label: "centrogalileu@gmail.com", href: "mailto:centrogalileu@gmail.com" },
+    { label: "Luanda, Angola",         href: "#contacto"                   },
+  ],
 };
 
 export default function Footer() {
@@ -43,11 +57,11 @@ export default function Footer() {
             <div key={group}>
               <p className="text-white font-semibold text-sm mb-4">{group}</p>
               <ul className="space-y-2.5">
-                {items.map((item) => (
-                  <li key={item}>
-                    <span className="text-sm cursor-default transition-colors hover:text-slate-300" style={{ color: "#64748b" }}>
-                      {item}
-                    </span>
+                {items.map(({ label, href }) => (
+                  <li key={label}>
+                    <a href={href} className="text-sm transition-colors hover:text-slate-300" style={{ color: "#64748b" }}>
+                      {label}
+                    </a>
                   </li>
                 ))}
               </ul>

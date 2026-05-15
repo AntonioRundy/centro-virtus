@@ -62,7 +62,7 @@ export default function DifferentialsSection() {
               <p className={`text-3xl font-black ${dark ? "" : "gradient-text"}`} style={dark ? { color: "#0f172a" } : {}}>
                 {value}
               </p>
-              <p className="text-xs mt-1" style={{ color: dark ? "#78350f" : "#64748b" }}>{label}</p>
+              <p className="text-xs mt-1" style={{ color: dark ? "#0f172a" : "#64748b" }}>{label}</p>
             </div>
           ))}
         </div>
