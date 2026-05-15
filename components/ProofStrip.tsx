@@ -13,7 +13,7 @@ export default function ProofStrip() {
           <p className="font-bold text-lg lg:text-xl text-center lg:text-left" style={{ color: "#0f172a" }}>
             Mais de{" "}
             <span style={{ color: "#16a34a" }}>200 alunos</span>{" "}
-            já confiam no Centro de Estudo Galileu
+            já confiam no Centro de Estudos Virtus
           </p>
 
           <div className="hidden lg:block w-px h-10 bg-slate-200 flex-shrink-0" />

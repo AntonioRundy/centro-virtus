@@ -38,10 +38,10 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset("/logo.png")} alt="Centro de Estudo Galileu" className="h-10 w-auto object-contain" />
+          <img src={asset("/logo.png")} alt="Logo Centro de Estudos Virtus" className="h-10 w-auto object-contain" />
           <span className="font-extrabold text-base leading-tight hidden lg:block" style={{ color: "#0f172a" }}>
-            Centro de Estudo{" "}
-            <span style={{ color: "#16a34a" }}>Galileu</span>
+            Centro de Estudos{" "}
+            <span style={{ color: "#16a34a" }}>Virtus</span>
           </span>
         </a>
 

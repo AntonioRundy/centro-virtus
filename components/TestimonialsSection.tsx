@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
             Resultados que <span className="gradient-text">falam por si</span>
           </h2>
           <p className="max-w-xl mx-auto text-lg" style={{ color: "#64748b" }}>
-            Histórias reais de alunos e encarregados que confiaram no Centro de Estudo Galileu.
+            Histórias reais de alunos e encarregados que confiaram no Centro de Estudos Virtus.
           </p>
         </div>
 

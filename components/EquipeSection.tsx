@@ -1,7 +1,7 @@
 import { CheckCircle, CalendarCheck } from "lucide-react";
 import { asset } from "@/lib/basePath";
 
-const WA_FULL = `https://wa.me/244946038986?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudo Galileu.")}`;
+const WA_FULL = `https://wa.me/244946038986?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudos Virtus.")}`;
 
 const highlights = [
   "Professores com formação académica superior",
@@ -24,7 +24,7 @@ export default function EquipeSection() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={asset("/equipe.png")}
-                alt="Equipa do Centro de Estudo Galileu"
+                alt="Equipa do Centro de Estudos Virtus"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "480px", objectPosition: "center top" }}
               />

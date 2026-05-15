@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 
-const WA_URL = `https://wa.me/244946038986?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o Centro de Estudo Galileu.")}`;
+const WA_URL = `https://wa.me/244946038986?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o Centro de Estudos Virtus.")}`;
 
 export default function WhatsAppFloat() {
   const [hovered, setHovered] = useState(false);

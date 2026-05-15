@@ -2,7 +2,7 @@ import { CalendarCheck, MessageCircle } from "lucide-react";
 import { asset } from "@/lib/basePath";
 
 const WA_URL  = "https://wa.me/244946038986";
-const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudo Galileu.")}`;
+const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudos Virtus.")}`;
 
 const proof = [
   { value: "+200",    label: "alunos"      },
@@ -114,7 +114,7 @@ export default function HeroSection() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={asset("/menina.png")}
-                alt="Aluna a estudar — Centro de Estudo Galileu"
+                alt="Aluna a estudar — Centro de Estudos Virtus"
                 className="w-full rounded-2xl object-cover object-top"
                 style={{ height: "440px", background: "linear-gradient(135deg, #dbeafe, #dcfce7)" }}
               />

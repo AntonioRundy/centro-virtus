@@ -45,7 +45,7 @@ export default function TeamSection() {
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
             </div>
             <p className="text-lg leading-relaxed italic" style={{ color: "#334155" }}>
-              "O Centro de Estudo Galileu transformou a relação do meu filho com a Matemática.
+              "O Centro de Estudos Virtus transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."
             </p>
             <p className="text-sm mt-4" style={{ color: "#64748b" }}>

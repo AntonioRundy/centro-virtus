@@ -33,10 +33,10 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={asset("/logo.png")} alt="Centro de Estudo Galileu" className="h-9 w-auto object-contain" />
+              <img src={asset("/logo.png")} alt="Logo Centro de Estudos Virtus" className="h-9 w-auto object-contain" />
               <span className="font-extrabold text-white text-base leading-tight">
-                Centro de Estudo{" "}
-                <span style={{ color: "#16a34a" }}>Galileu</span>
+                Centro de Estudos{" "}
+                <span style={{ color: "#16a34a" }}>Virtus</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-5" style={{ color: "#64748b" }}>
@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style={{ borderColor: "rgba(255,255,255,0.08)", color: "#475569" }}>
-          <p>© {new Date().getFullYear()} Centro de Estudo Galileu. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Centro de Estudos Virtus. Todos os direitos reservados.</p>
           <p>Feito com dedicação em Luanda, Angola 🇦🇴</p>
         </div>
       </div>

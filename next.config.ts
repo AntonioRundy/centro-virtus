@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 // Single source of truth — update here when the repo name changes.
-const BASE_PATH = "/centro-galileu3";
+const BASE_PATH = "/centro-virtus";
 
 const nextConfig: NextConfig = {
   output: "export",

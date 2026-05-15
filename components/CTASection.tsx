@@ -1,7 +1,7 @@
 import { MessageCircle, CalendarCheck, Zap } from "lucide-react";
 
 const WA_URL  = "https://wa.me/244946038986";
-const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudo Galileu.")}`;
+const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudos Virtus.")}`;
 
 export default function CTASection() {
   return (
