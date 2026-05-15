@@ -16,10 +16,10 @@ export default function TeamSection() {
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             Credenciais
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
             Professores <span className="gradient-text">Qualificados</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-lg" style={{ color: "#64748b" }}>
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "#94a3b8" }}>
             A qualidade do acompanhamento começa com a qualidade dos professores.
           </p>
         </div>
@@ -44,11 +44,11 @@ export default function TeamSection() {
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
             </div>
-            <p className="text-lg leading-relaxed italic" style={{ color: "#334155" }}>
+            <p className="text-lg leading-relaxed italic" style={{ color: "#e2e8f0" }}>
               "O Centro de Estudos Virtus transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."
             </p>
-            <p className="text-sm mt-4" style={{ color: "#64748b" }}>
+            <p className="text-sm mt-4" style={{ color: "#94a3b8" }}>
               — Encarregado de educação, aluno do 9º ano
             </p>
           </div>

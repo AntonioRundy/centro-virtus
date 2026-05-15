@@ -16,10 +16,10 @@ export default function MethodologySection() {
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             Como trabalhamos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
             A Nossa <span className="gradient-text">Metodologia</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-lg" style={{ color: "#64748b" }}>
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "#94a3b8" }}>
             Três pilares que garantem progressão real e duradoura para cada aluno.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function MethodologySection() {
         <div className="section-divider mb-14" />
 
         <div className="text-center mb-10">
-          <h3 className="text-2xl font-bold" style={{ color: "#0f172a" }}>
+          <h3 className="text-2xl font-bold" style={{ color: "#ffffff" }}>
             Aprender onde for mais cómodo para si
           </h3>
         </div>

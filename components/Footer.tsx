@@ -25,7 +25,7 @@ const links: Record<string, { label: string; href: string }[]> = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 pt-16 pb-8" style={{ backgroundColor: "#0f172a" }}>
+    <footer className="border-t border-white/5 pt-16 pb-8" style={{ backgroundColor: "#020617" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 

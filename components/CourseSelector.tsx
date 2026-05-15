@@ -41,13 +41,13 @@ export default function CourseSelector() {
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             Preços transparentes
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: "#0f172a" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-3" style={{ color: "#ffffff" }}>
             Escolha a disciplina <span className="gradient-text">e o nível</span>
           </h2>
-          <p className="text-base mb-1" style={{ color: "#64748b" }}>
-            Valores a partir de <strong style={{ color: "#0f172a" }}>6.000 Kz/hora</strong>
+          <p className="text-base mb-1" style={{ color: "#94a3b8" }}>
+            Valores a partir de <strong style={{ color: "#ffffff" }}>6.000 Kz/hora</strong>
           </p>
-          <p className="text-sm" style={{ color: "#64748b" }}>
+          <p className="text-sm" style={{ color: "#94a3b8" }}>
             O encarregado monta o seu pacote conforme a necessidade do aluno.
           </p>
         </div>
@@ -58,15 +58,16 @@ export default function CourseSelector() {
             <div key={s} className="flex items-center gap-2">
               <div
                 className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                  step === s ? "border-2 border-green-500" : step < s ? "bg-slate-100 text-slate-400" : ""
+                  step === s ? "border-2 border-green-500" : step < s ? "text-slate-500" : ""
                 }`}
+                style={step < s ? { backgroundColor: "rgba(255,255,255,0.08)" } : {}}
                 style={step > s ? { backgroundColor: "#16a34a", color: "#fff" } : step === s ? { color: "#16a34a" } : {}}
               >
                 {step > s ? <CheckCircle size={16} /> : s}
               </div>
               {s < 3 && (
                 <div className="w-16 h-0.5 rounded-full transition-all duration-300"
-                  style={{ backgroundColor: step > s ? "#16a34a" : "#e2e8f0" }} />
+                  style={{ backgroundColor: step > s ? "#16a34a" : "rgba(255,255,255,0.10)" }} />
               )}
             </div>
           ))}
@@ -75,7 +76,7 @@ export default function CourseSelector() {
         {/* Step 1: Subject */}
         {step === 1 && (
           <div className="animate-fade-up">
-            <h3 className="text-xl font-bold text-center mb-8" style={{ color: "#0f172a" }}>
+            <h3 className="text-xl font-bold text-center mb-8" style={{ color: "#ffffff" }}>
               Passo 1 — Qual é a disciplina?
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -98,8 +99,8 @@ export default function CourseSelector() {
         {step === 2 && (
           <div className="animate-fade-up">
             <div className="flex items-center justify-between mb-8">
-              <h3 className="text-xl font-bold" style={{ color: "#0f172a" }}>Passo 2 — Qual é o nível?</h3>
-              <button onClick={reset} className="text-slate-400 hover:text-slate-600 text-xs flex items-center gap-1 transition-colors">
+              <h3 className="text-xl font-bold" style={{ color: "#ffffff" }}>Passo 2 — Qual é o nível?</h3>
+              <button onClick={reset} className="text-slate-400 hover:text-slate-300 text-xs flex items-center gap-1 transition-colors">
                 <RotateCcw size={12} /> Recomeçar
               </button>
             </div>
@@ -129,8 +130,8 @@ export default function CourseSelector() {
         {step === 3 && sp && (
           <div className="animate-fade-up max-w-2xl mx-auto">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold" style={{ color: "#0f172a" }}>O seu plano personalizado</h3>
-              <button onClick={reset} className="text-slate-400 hover:text-slate-600 text-xs flex items-center gap-1 transition-colors">
+              <h3 className="text-xl font-bold" style={{ color: "#ffffff" }}>O seu plano personalizado</h3>
+              <button onClick={reset} className="text-slate-400 hover:text-slate-300 text-xs flex items-center gap-1 transition-colors">
                 <RotateCcw size={12} /> Recomeçar
               </button>
             </div>
@@ -143,7 +144,7 @@ export default function CourseSelector() {
                 </span>
               )}
               {level && (
-                <span className="bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "#e2e8f0" }}>
                   {sp.label} · {sp.range}
                 </span>
               )}
@@ -165,24 +166,24 @@ export default function CourseSelector() {
 
             {/* Info boxes */}
             <div className="card-elevated rounded-2xl p-5 mb-4 flex gap-3">
-              <Info size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
+              <Info size={18} className="text-blue-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-semibold mb-0.5" style={{ color: "#0f172a" }}>Como funciona?</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>
+                <p className="text-sm font-semibold mb-0.5" style={{ color: "#ffffff" }}>Como funciona?</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#e2e8f0" }}>
                   O encarregado monta o seu pacote conforme a necessidade do aluno. O preço é por hora de aula.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-5">
-              <Clock size={16} className="text-amber-600 flex-shrink-0" />
-              <p className="text-sm font-medium text-amber-800">
+            <div className="flex items-center gap-3 rounded-xl px-5 py-3 mb-5" style={{ background: "rgba(180,130,0,0.12)", border: "1px solid rgba(212,175,55,0.25)" }}>
+              <Clock size={16} className="flex-shrink-0" style={{ color: "#fbbf24" }} />
+              <p className="text-sm font-medium" style={{ color: "#fbbf24" }}>
                 Recomendação mínima: <strong>1h30 por sessão</strong> para garantir melhor aproveitamento.
               </p>
             </div>
 
             <div className="card-elevated rounded-2xl p-6 mb-4">
-              <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>{sp.description}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "#e2e8f0" }}>{sp.description}</p>
             </div>
 
             <button onClick={() => setExpanded(!expanded)}
@@ -194,10 +195,10 @@ export default function CourseSelector() {
 
             {expanded && (
               <div className="card-elevated rounded-2xl p-6 mb-6 animate-fade-in">
-                <p className="font-semibold text-sm mb-3" style={{ color: "#0f172a" }}>O que está incluído:</p>
+                <p className="font-semibold text-sm mb-3" style={{ color: "#ffffff" }}>O que está incluído:</p>
                 <ul className="space-y-2.5">
                   {sp.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "#334155" }}>
+                    <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "#e2e8f0" }}>
                       <CheckCircle size={15} className="text-green-600 flex-shrink-0" />
                       {f}
                     </li>
@@ -207,7 +208,7 @@ export default function CourseSelector() {
             )}
 
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-full text-base transition-all duration-300 shadow-lg shadow-green-200 hover:scale-[1.02]">
+              className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-full text-base transition-all duration-300 shadow-lg hover:scale-[1.02]" style={{ boxShadow: "0 8px 32px rgba(22,163,74,0.35)" }}>
               <CalendarCheck size={18} />
               Agendar Aula Gratuita
               <ChevronRight size={16} />

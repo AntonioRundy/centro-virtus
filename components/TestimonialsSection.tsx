@@ -54,10 +54,10 @@ export default function TestimonialsSection() {
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             O que dizem sobre nós
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
             Resultados que <span className="gradient-text">falam por si</span>
           </h2>
-          <p className="max-w-xl mx-auto text-lg" style={{ color: "#64748b" }}>
+          <p className="max-w-xl mx-auto text-lg" style={{ color: "#94a3b8" }}>
             Histórias reais de alunos e encarregados que confiaram no Centro de Estudos Virtus.
           </p>
         </div>
@@ -67,10 +67,10 @@ export default function TestimonialsSection() {
             <div
               key={name}
               className="card-lift rounded-2xl p-7 flex flex-col"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
+              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               <Stars count={stars} />
-              <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#334155" }}>
+              <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#e2e8f0" }}>
                 &ldquo;{text}&rdquo;
               </p>
               <div className="flex items-center gap-3">
@@ -81,8 +81,8 @@ export default function TestimonialsSection() {
                   {initial}
                 </div>
                 <div>
-                  <p className="font-semibold text-sm" style={{ color: "#0f172a" }}>{name}</p>
-                  <p className="text-xs" style={{ color: "#64748b" }}>{role}</p>
+                  <p className="font-semibold text-sm" style={{ color: "#ffffff" }}>{name}</p>
+                  <p className="text-xs" style={{ color: "#94a3b8" }}>{role}</p>
                 </div>
               </div>
             </div>

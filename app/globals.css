@@ -2,33 +2,40 @@
 
 /* ── Brand colour tokens ─────────────────────────────── */
 :root {
-  --green:        #16a34a;
-  --green-dark:   #15803d;
-  --blue:         #1e3a8a;
-  --blue-mid:     #2563eb;
-  --gold:         #d4af37;
-  --gold-dark:    #b8962e;
-  --black:        #020617;
-  --heading:      #0f172a;
-  --body:         #334155;
-  --muted:        #64748b;
-  --bg-soft:      #f8fafc;
-  --border:       #e2e8f0;
+  --green:      #16a34a;
+  --green-dark: #15803d;
+  --blue:       #1e3a8a;
+  --gold:       #d4af37;
+  --black:      #020617;
 }
 
 /* ── Base ────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 body {
-  background-color: #f8fafc;
-  color: #334155;
+  background-color: #020617;
+  color: #e2e8f0;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── Section helpers ─────────────────────────────────── */
-.section-white { background-color: #ffffff; }
-.section-gray  { background-color: #f8fafc; }
+.section-white { background-color: transparent; }
+.section-gray  { background-color: rgba(255,255,255,0.02); }
 .section-dark  { background-color: #020617; }
+
+/* ── Glassmorphism card ──────────────────────────────── */
+.card-glass {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Green glass card ────────────────────────────────── */
+.card-green-glass {
+  background: rgba(22,163,74,0.10);
+  border: 1px solid rgba(22,163,74,0.22);
+}
 
 /* ── Gradient headline — green to gold ──────────────── */
 .gradient-text {
@@ -38,18 +45,18 @@ body {
   background-clip: text;
 }
 
-/* ── Elevated card ───────────────────────────────────── */
+/* ── Elevated card → glassmorphism ──────────────────── */
 .card-elevated {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
 /* ── Card hover lift ────────────────────────────────── */
 .card-lift { transition: all 0.3s ease; }
 .card-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
 }
 
 /* ── Keyframes ──────────────────────────────────────── */
@@ -66,12 +73,8 @@ body {
   to   { opacity: 1; transform: translateX(0);    }
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0    rgba(22, 163, 74, 0.50); }
-  50%       { box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);   }
-}
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center;  }
+  0%, 100% { box-shadow: 0 0 0 0    rgba(22,163,74,0.50); }
+  50%       { box-shadow: 0 0 0 14px rgba(22,163,74,0);   }
 }
 
 .animate-fade-up     { animation: fadeInUp   0.6s ease-out both; }
@@ -85,14 +88,23 @@ body {
 .delay-400 { animation-delay: 0.40s; }
 .delay-500 { animation-delay: 0.50s; }
 
-/* ── Divider ────────────────────────────────────────── */
+/* ── Section divider ────────────────────────────────── */
 .section-divider {
-  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
   height: 1px;
+}
+
+/* ── Contact email card ─────────────────────────────── */
+.contact-email-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(22,163,74,0.15);
+}
+.contact-email-card:hover {
+  border-color: rgba(22,163,74,0.30);
 }
 
 /* ── Scrollbar ──────────────────────────────────────── */
 ::-webkit-scrollbar         { width: 6px; }
-::-webkit-scrollbar-track   { background: #f8fafc; }
-::-webkit-scrollbar-thumb   { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-track   { background: #020617; }
+::-webkit-scrollbar-thumb   { background: rgba(255,255,255,0.12); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #16a34a; }

@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/97 backdrop-blur-md shadow-md border-b border-slate-100"
-          : "bg-white/90 backdrop-blur-sm"
+          ? "bg-[#020617]/90 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
@@ -39,7 +39,7 @@ export default function Navbar() {
         <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={asset("/logo.png")} alt="Logo Centro de Estudos Virtus" className="h-10 w-auto object-contain" />
-          <span className="font-extrabold text-base leading-tight hidden lg:block" style={{ color: "#0f172a" }}>
+          <span className="font-extrabold text-base leading-tight hidden lg:block" style={{ color: "#ffffff" }}>
             Centro de Estudos{" "}
             <span style={{ color: "#16a34a" }}>Virtus</span>
           </span>
@@ -52,7 +52,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className="relative text-sm font-medium transition-colors duration-200 group"
-                style={{ color: "#334155" }}
+                style={{ color: "#e2e8f0" }}
               >
                 {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 rounded-full" />
@@ -74,8 +74,8 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
-          style={{ color: "#334155" }}
+          className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+          style={{ color: "#e2e8f0" }}
           aria-label="Abrir menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -84,15 +84,15 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 px-4 pb-6 pt-3 animate-fade-in shadow-lg">
+        <div className="md:hidden border-t border-white/5 px-4 pb-6 pt-3 animate-fade-in" style={{ backgroundColor: "#020617" }}>
           <ul className="flex flex-col gap-1 mb-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors hover:bg-green-50"
-                  style={{ color: "#334155" }}
+                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors hover:bg-white/8"
+                  style={{ color: "#e2e8f0" }}
                 >
                   {link.label}
                 </a>

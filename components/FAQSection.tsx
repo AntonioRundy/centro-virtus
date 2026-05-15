@@ -45,10 +45,10 @@ export default function FAQSection() {
           <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
             Dúvidas frequentes
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#0f172a" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
             Perguntas <span className="gradient-text">Frequentes</span>
           </h2>
-          <p className="text-lg" style={{ color: "#64748b" }}>
+          <p className="text-lg" style={{ color: "#94a3b8" }}>
             Tudo o que precisa de saber antes de começar.
           </p>
         </div>
@@ -58,13 +58,13 @@ export default function FAQSection() {
             <div
               key={i}
               className="rounded-2xl overflow-hidden"
-              style={{ border: "1px solid #e2e8f0", backgroundColor: "#ffffff" }}
+              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-slate-50 transition-colors"
+                className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-white/5 transition-colors"
               >
-                <span className="font-semibold text-sm sm:text-base" style={{ color: "#0f172a" }}>{q}</span>
+                <span className="font-semibold text-sm sm:text-base" style={{ color: "#ffffff" }}>{q}</span>
                 <ChevronDown
                   size={18}
                   className="flex-shrink-0 transition-transform duration-300"
@@ -73,7 +73,7 @@ export default function FAQSection() {
               </button>
               {open === i && (
                 <div className="px-6 pb-5 animate-fade-in">
-                  <p className="text-sm leading-relaxed" style={{ color: "#334155" }}>{a}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#e2e8f0" }}>{a}</p>
                 </div>
               )}
             </div>
