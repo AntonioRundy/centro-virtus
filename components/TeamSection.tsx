@@ -1,10 +1,8 @@
-import { Shield, GraduationCap, Users, Star } from "lucide-react";
-
 const credentials = [
-  { icon: Star,          title: "Mais de 5 Anos de Experiência", desc: "Prática no acompanhamento de alunos de diferentes níveis, perfis e sistemas de ensino."      },
-  { icon: GraduationCap, title: "Professores Qualificados",      desc: "Formação académica superior — rigor e qualidade garantidos em cada sessão."                  },
-  { icon: Users,         title: "Dedicação e Paixão",            desc: "Motivação e entusiasmo transmitidos em cada aula — ingredientes essenciais para o sucesso."  },
-  { icon: Shield,        title: "Múltiplos Currículos",          desc: "Experiência com currículos angolano, português e internacional (IB/British)."                  },
+  { title: "Mais de 5 Anos de Experiência", desc: "Prática no acompanhamento de alunos de diferentes níveis, perfis e sistemas de ensino."      },
+  { title: "Professores Qualificados",      desc: "Formação académica superior — rigor e qualidade garantidos em cada sessão."                  },
+  { title: "Dedicação e Paixão",            desc: "Motivação e entusiasmo transmitidos em cada aula — ingredientes essenciais para o sucesso."  },
+  { title: "Múltiplos Currículos",          desc: "Experiência com currículos angolano, português e internacional (IB/British)."                  },
 ];
 
 export default function TeamSection() {
@@ -24,26 +22,21 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* Cards — institutional blue */}
+        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credentials.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="card-lift rounded-2xl p-7 text-center"
-              style={{ backgroundColor: "#1e3a8a", boxShadow: "0 12px 30px rgba(30,58,138,0.28)" }}>
-              <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-5">
-                <Icon size={28} className="text-white" />
-              </div>
-              <h3 className="font-bold text-base text-white mb-3">{title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#bfdbfe" }}>{desc}</p>
+          {credentials.map(({ title, desc }) => (
+            <div key={title} className="card-lift rounded-2xl p-10 text-center"
+              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
+              <h3 className="font-extrabold text-lg text-white mb-3">{title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "#94a3b8" }}>{desc}</p>
             </div>
           ))}
         </div>
 
         {/* Testimonial */}
         <div className="mt-16 max-w-3xl mx-auto">
-          <div className="card-elevated rounded-2xl px-8 py-8 text-center">
-            <div className="flex items-center justify-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
-            </div>
+          <div className="rounded-2xl px-10 py-10 text-center"
+            style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
             <p className="text-lg leading-relaxed italic" style={{ color: "#e2e8f0" }}>
               "O Centro de Estudos Virtus transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."

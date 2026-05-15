@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Phone, MapPin, CalendarCheck } from "lucide-react";
+import { MessageCircle, Mail, CalendarCheck } from "lucide-react";
 
 const WA_URL  = "https://wa.me/244946038986";
 const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudos Virtus.")}`;
@@ -54,10 +54,7 @@ export default function ContactSection() {
               </div>
             </a>
 
-            <div className="flex items-center gap-5 rounded-2xl p-7" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                <Phone size={22} style={{ color: "#e2e8f0" }} />
-              </div>
+            <div className="flex items-center gap-5 rounded-2xl p-7" style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
               <div>
                 <p className="font-bold text-lg" style={{ color: "#ffffff" }}>Telefone</p>
                 <p className="text-sm" style={{ color: "#e2e8f0" }}>+244 946 038 986</p>
@@ -65,10 +62,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-5 rounded-2xl p-7" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                <MapPin size={22} style={{ color: "#e2e8f0" }} />
-              </div>
+            <div className="flex items-center gap-5 rounded-2xl p-7" style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
               <div>
                 <p className="font-bold text-lg" style={{ color: "#ffffff" }}>Localização</p>
                 <p className="text-sm" style={{ color: "#e2e8f0" }}>Luanda, Angola</p>
@@ -78,7 +72,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right: reasons panel */}
-          <div className="rounded-2xl p-10 flex flex-col justify-between" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
+          <div className="rounded-2xl p-10 flex flex-col justify-between" style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
             <div>
               <h3 className="font-extrabold text-2xl mb-6" style={{ color: "#ffffff" }}>
                 Porque contactar-nos agora?

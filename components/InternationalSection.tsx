@@ -1,4 +1,4 @@
-import { Globe, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const schools = [
   { abbr: "EPL",  name: "Escola Portuguesa de Luanda",  flag: "🇵🇹", desc: "Currículo português, 1º ao 12º ano."     },
@@ -45,14 +45,13 @@ export default function InternationalSection() {
 
           {/* Right: school cards — GREEN */}
           <div className="grid grid-cols-2 gap-5">
-            {schools.map(({ abbr, name, flag, desc }) => (
+            {schools.map(({ abbr, name, desc }) => (
               <div
                 key={abbr}
-                className="card-lift rounded-2xl p-6"
-                style={{ background: "rgba(22,163,74,0.10)", border: "1px solid rgba(22,163,74,0.20)", boxShadow: "0 10px 28px rgba(22,163,74,0.12)" }}
+                className="card-lift rounded-2xl p-8"
+                style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
               >
-                <div className="text-3xl mb-3">{flag}</div>
-                <p className="font-bold text-sm text-white">{abbr}</p>
+                <p className="font-extrabold text-2xl text-white mb-1">{abbr}</p>
                 <p className="text-xs font-medium mb-2" style={{ color: "#86efac" }}>{name}</p>
                 <p className="text-xs leading-relaxed" style={{ color: "#e2e8f0" }}>{desc}</p>
               </div>
@@ -62,10 +61,7 @@ export default function InternationalSection() {
         </div>
 
         {/* Banner */}
-        <div className="mt-14 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-5" style={{ background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.20)" }}>
-          <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(212,175,55,0.15)" }}>
-            <Globe size={26} style={{ color: "#d4af37" }} />
-          </div>
+        <div className="mt-14 rounded-2xl p-10" style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
           <div>
             <p className="font-bold text-lg" style={{ color: "#ffffff" }}>A sua escola não está na lista?</p>
             <p className="text-sm mt-1" style={{ color: "#e2e8f0" }}>

@@ -1,10 +1,8 @@
-import { Package, UserCheck, LayoutTemplate, BarChart3 } from "lucide-react";
-
 const differentials = [
-  { icon: Package,        title: "Até 3 Disciplinas por Pacote", desc: "Cobertura ampla sem custos excessivos — até três disciplinas num único plano.",                      badge: "Flexível"    },
-  { icon: UserCheck,      title: "Professores Especializados",   desc: "Cada disciplina é lecionada pelo professor mais qualificado nessa área — não por um generalista.",   badge: "Qualidade"   },
-  { icon: LayoutTemplate, title: "Planos Personalizados",        desc: "Desenhamos o acompanhamento com base nas necessidades reais do aluno e do currículo escolar.",       badge: "Sob medida"  },
-  { icon: BarChart3,      title: "Acompanhamento Contínuo",      desc: "Monitorização regular do progresso, feedback para encarregados e ajuste do plano quando necessário.", badge: "Consistente" },
+  { title: "Até 3 Disciplinas por Pacote", desc: "Cobertura ampla sem custos excessivos — até três disciplinas num único plano.",                      badge: "Flexível"    },
+  { title: "Professores Especializados",   desc: "Cada disciplina é lecionada pelo professor mais qualificado nessa área — não por um generalista.",   badge: "Qualidade"   },
+  { title: "Planos Personalizados",        desc: "Desenhamos o acompanhamento com base nas necessidades reais do aluno e do currículo escolar.",       badge: "Sob medida"  },
+  { title: "Acompanhamento Contínuo",      desc: "Monitorização regular do progresso, feedback para encarregados e ajuste do plano quando necessário.", badge: "Consistente" },
 ];
 
 export default function DifferentialsSection() {
@@ -24,24 +22,19 @@ export default function DifferentialsSection() {
           </p>
         </div>
 
-        {/* Differential cards — GREEN */}
+        {/* Differential cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {differentials.map(({ icon: Icon, title, desc, badge }) => (
+          {differentials.map(({ title, desc, badge }) => (
             <div
               key={title}
-              className="card-lift rounded-2xl p-8 flex gap-6"
-              style={{ backgroundColor: "#22c55e", boxShadow: "0 10px 30px rgba(34,197,94,0.22)" }}
+              className="card-lift rounded-2xl p-10"
+              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
             >
-              <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <Icon size={24} className="text-white" />
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <h3 className="font-extrabold text-2xl text-white">{title}</h3>
+                <span className="text-xs font-semibold bg-white/10 text-white px-2.5 py-0.5 rounded-full">{badge}</span>
               </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <h3 className="font-bold text-base text-white">{title}</h3>
-                  <span className="text-xs font-semibold bg-white/25 text-white px-2.5 py-0.5 rounded-full">{badge}</span>
-                </div>
-                <p className="text-sm leading-relaxed text-green-50">{desc}</p>
-              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "#94a3b8" }}>{desc}</p>
             </div>
           ))}
         </div>

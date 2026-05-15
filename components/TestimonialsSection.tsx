@@ -1,11 +1,8 @@
-import { Star } from "lucide-react";
-
 const testimonials = [
   {
     name: "Maria João Ferreira",
     role: "Mãe de aluno — EPL, 10º Ano",
     text: "O meu filho melhorou a nota de Matemática de 10 para 16 em apenas dois meses. Os professores são incríveis, pacientes e muito competentes. Recomendo vivamente.",
-    stars: 5,
     initial: "M",
     color: "#16a34a",
   },
@@ -13,7 +10,6 @@ const testimonials = [
     name: "Carlos Teixeira",
     role: "Encarregado — LIS, 8º Ano",
     text: "Finalmente encontrámos um apoio que entende o currículo do LIS. A professora de inglês é excelente e a nossa filha já se sente muito mais confiante nas aulas.",
-    stars: 5,
     initial: "C",
     color: "#1e3a8a",
   },
@@ -21,7 +17,6 @@ const testimonials = [
     name: "Ana Luísa Domingos",
     role: "Aluna — CCB, 12º Ano",
     text: "A preparação para os exames nacionais foi fundamental. As simulações e o feedback detalhado ajudaram-me a melhorar muito. Entrei na universidade!",
-    stars: 5,
     initial: "A",
     color: "#d4af37",
   },
@@ -29,21 +24,10 @@ const testimonials = [
     name: "Paulo Nkosi",
     role: "Pai de aluno — CAT, 6º Ano",
     text: "Excelente serviço. O meu filho está muito mais motivado para estudar. A professora adapta as aulas de forma muito criativa e os resultados são visíveis.",
-    stars: 5,
     initial: "P",
     color: "#6d28d9",
   },
 ];
-
-function Stars({ count }: { count: number }) {
-  return (
-    <div className="flex gap-0.5 mb-4">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
-      ))}
-    </div>
-  );
-}
 
 export default function TestimonialsSection() {
   return (
@@ -63,15 +47,15 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map(({ name, role, text, stars, initial, color }) => (
+          {testimonials.map(({ name, role, text, initial, color }) => (
             <div
               key={name}
-              className="card-lift rounded-2xl p-7 flex flex-col"
-              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              className="card-lift rounded-2xl p-10 flex flex-col"
+              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
             >
-              <Stars count={stars} />
+              <span className="quote-mark">&ldquo;</span>
               <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#e2e8f0" }}>
-                &ldquo;{text}&rdquo;
+                {text}
               </p>
               <div className="flex items-center gap-3">
                 <div

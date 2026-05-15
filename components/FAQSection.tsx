@@ -58,7 +58,7 @@ export default function FAQSection() {
             <div
               key={i}
               className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
