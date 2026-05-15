@@ -58,7 +58,7 @@ const jsonLd = {
     "Acompanhamento escolar personalizado em Luanda, Angola. Explicações online e ao domicílio.",
   url: BASE_URL,
   telephone: "+244946038986",
-  email: "centrogalileu@gmail.com",
+  email: "centrodeestudovirtus@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Luanda",

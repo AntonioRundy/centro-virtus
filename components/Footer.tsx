@@ -18,7 +18,7 @@ const links: Record<string, { label: string; href: string }[]> = {
   ],
   "Contacto": [
     { label: "+244 946 038 986",       href: "tel:+244946038986"           },
-    { label: "centrogalileu@gmail.com", href: "mailto:centrogalileu@gmail.com" },
+    { label: "centrodeestudovirtus@gmail.com", href: "mailto:centrodeestudovirtus@gmail.com" },
     { label: "Luanda, Angola",         href: "#contacto"                   },
   ],
 };

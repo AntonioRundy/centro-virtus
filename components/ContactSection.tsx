@@ -2,7 +2,7 @@ import { MessageCircle, Mail, Phone, MapPin, CalendarCheck } from "lucide-react"
 
 const WA_URL  = "https://wa.me/244946038986";
 const WA_FULL = `${WA_URL}?text=${encodeURIComponent("Olá! Gostaria de agendar uma aula gratuita no Centro de Estudos Virtus.")}`;
-const MAIL    = "mailto:centrogalileu@gmail.com";
+const MAIL    = "mailto:centrodeestudovirtus@gmail.com";
 
 export default function ContactSection() {
   return (
@@ -47,7 +47,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="font-bold text-lg" style={{ color: "#0f172a" }}>Email</p>
-                <p className="text-sm" style={{ color: "#334155" }}>centrogalileu@gmail.com</p>
+                <p className="text-sm" style={{ color: "#334155" }}>centrodeestudovirtus@gmail.com</p>
                 <p className="text-xs mt-1 transition-colors group-hover:text-green-600" style={{ color: "#64748b" }}>
                   Enviar mensagem →
                 </p>
