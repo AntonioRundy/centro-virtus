@@ -25,7 +25,7 @@ const links: Record<string, { label: string; href: string }[]> = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 pt-16 pb-8" style={{ backgroundColor: "#020617" }}>
+    <footer className="border-t border-white/5 pt-16 pb-8" style={{ backgroundColor: "#070D1B" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
@@ -34,12 +34,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={asset("/logo.png")} alt="Logo Centro de Estudos Virtus" className="h-9 w-auto object-contain" />
-              <span className="font-extrabold text-white text-base leading-tight">
+              <span className="font-extrabold text-base leading-tight" style={{ color: "#F4F4F2" }}>
                 Centro de Estudos{" "}
                 <span style={{ color: "#16a34a" }}>Virtus</span>
               </span>
             </div>
-            <p className="text-sm leading-relaxed mb-5" style={{ color: "#64748b" }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(244,244,242,0.50)" }}>
               Acompanhamento escolar personalizado em Luanda. Online e ao domicílio.
             </p>
             <a
@@ -59,7 +59,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {items.map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="text-sm transition-colors hover:text-slate-300" style={{ color: "#64748b" }}>
+                    <a href={href} className="text-sm transition-colors footer-link">
                       {label}
                     </a>
                   </li>
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style={{ borderColor: "rgba(255,255,255,0.08)", color: "#475569" }}>
+          style={{ borderColor: "rgba(255,255,255,0.05)", color: "rgba(244,244,242,0.35)" }}>
           <p>© {new Date().getFullYear()} Centro de Estudos Virtus. Todos os direitos reservados.</p>
           <p>Feito com dedicação em Luanda, Angola 🇦🇴</p>
         </div>

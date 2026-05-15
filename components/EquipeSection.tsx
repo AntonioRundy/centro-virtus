@@ -19,7 +19,7 @@ export default function EquipeSection() {
 
           {/* LEFT: image */}
           <div>
-            <div className="rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.05)", boxShadow: "0 20px 48px rgba(0,0,0,0.5)" }}>
+            <div className="rounded-2xl overflow-hidden" style={{ background: "rgba(30,18,8,0.8)", boxShadow: "0 20px 48px rgba(0,0,0,0.5)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={asset("/equipe.png")}
@@ -32,23 +32,23 @@ export default function EquipeSection() {
 
           {/* RIGHT: text */}
           <div>
-            <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+            <span className="label-gold inline-block mb-3">
               A nossa equipa
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight" style={{ color: "#ffffff" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight" style={{ color: "#F4F4F2" }}>
               Professores <span className="gradient-text">dedicados</span>,{" "}
               focados no sucesso de cada aluno.
             </h2>
 
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "#e2e8f0" }}>
+            <p className="text-lg leading-relaxed mb-8" style={{ color: "rgba(244,244,242,0.75)" }}>
               Não somos apenas especialistas nas nossas áreas — somos educadores que acreditam
               no potencial de cada estudante e trabalham diariamente para o ajudar a alcançá-lo.
             </p>
 
             <ul className="space-y-3 mb-10">
               {highlights.map((h) => (
-                <li key={h} className="flex items-start gap-3" style={{ color: "#e2e8f0" }}>
+                <li key={h} className="flex items-start gap-3" style={{ color: "rgba(244,244,242,0.75)" }}>
                   <CheckCircle size={18} className="text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-sm leading-relaxed">{h}</span>
                 </li>
@@ -69,7 +69,7 @@ export default function EquipeSection() {
               <a
                 href="#contacto"
                 className="inline-flex items-center justify-center gap-2 border-2 font-semibold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:border-green-500 hover:text-green-400"
-                style={{ color: "#94a3b8", borderColor: "rgba(255,255,255,0.20)" }}
+                style={{ color: "rgba(244,244,242,0.70)", borderColor: "rgba(255,255,255,0.15)" }}
               >
                 Falar com um Professor
               </a>

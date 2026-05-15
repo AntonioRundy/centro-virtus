@@ -22,20 +22,20 @@ export default function InternationalSection() {
 
           {/* Left: text */}
           <div>
-            <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+            <span className="label-gold inline-block mb-3">
               Alcance global, qualidade local
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6" style={{ color: "#ffffff" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6" style={{ color: "#F4F4F2" }}>
               Curriculum <span className="gradient-text">Internacional</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "#e2e8f0" }}>
+            <p className="text-lg leading-relaxed mb-8" style={{ color: "rgba(244,244,242,0.75)" }}>
               Apoiamos alunos de diferentes escolas e sistemas de ensino em Luanda.
               Os nossos professores conhecem os currículos específicos de cada instituição,
               garantindo acompanhamento verdadeiramente alinhado com a realidade escolar do aluno.
             </p>
             <ul className="space-y-3">
               {highlights.map((h) => (
-                <li key={h} className="flex items-center gap-3 text-sm" style={{ color: "#e2e8f0" }}>
+                <li key={h} className="flex items-center gap-3 text-sm" style={{ color: "rgba(244,244,242,0.75)" }}>
                   <CheckCircle size={16} className="text-green-600 flex-shrink-0" />
                   {h}
                 </li>
@@ -49,11 +49,11 @@ export default function InternationalSection() {
               <div
                 key={abbr}
                 className="card-lift rounded-2xl p-8"
-                style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
+                style={{ backgroundColor: "#1E1208", border: "1px solid rgba(255,255,255,0.04)", boxShadow: "none" }}
               >
-                <p className="font-extrabold text-2xl text-white mb-1">{abbr}</p>
-                <p className="text-xs font-medium mb-2" style={{ color: "#86efac" }}>{name}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#e2e8f0" }}>{desc}</p>
+                <p className="font-bold text-2xl mb-1" style={{ color: "#F4F4F2" }}>{abbr}</p>
+                <p className="text-xs font-medium mb-2" style={{ color: "#C5A880" }}>{name}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(244,244,242,0.60)" }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -61,10 +61,10 @@ export default function InternationalSection() {
         </div>
 
         {/* Banner */}
-        <div className="mt-14 rounded-2xl p-10" style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
+        <div className="mt-14 rounded-2xl p-10" style={{ background: "rgba(197,168,128,0.05)", border: "1px solid rgba(197,168,128,0.12)" }}>
           <div>
-            <p className="font-bold text-lg" style={{ color: "#ffffff" }}>A sua escola não está na lista?</p>
-            <p className="text-sm mt-1" style={{ color: "#e2e8f0" }}>
+            <p className="font-bold text-lg" style={{ color: "#F4F4F2" }}>A sua escola não está na lista?</p>
+            <p className="text-sm mt-1" style={{ color: "rgba(244,244,242,0.70)" }}>
               Não se preocupe. Contacte-nos e adaptamos o nosso acompanhamento ao currículo específico do seu educando.
             </p>
           </div>

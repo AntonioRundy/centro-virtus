@@ -42,10 +42,10 @@ export default function FAQSection() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+          <span className="label-gold inline-block mb-3">
             Dúvidas frequentes
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#F4F4F2" }}>
             Perguntas <span className="gradient-text">Frequentes</span>
           </h2>
           <p className="text-lg" style={{ color: "#94a3b8" }}>
@@ -58,22 +58,22 @@ export default function FAQSection() {
             <div
               key={i}
               className="rounded-2xl overflow-hidden"
-              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
+              style={{ backgroundColor: "#1E1208", border: "1px solid rgba(255,255,255,0.04)", boxShadow: "none" }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-white/5 transition-colors"
+                className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 hover:bg-white/[0.03] transition-colors"
               >
-                <span className="font-semibold text-sm sm:text-base" style={{ color: "#ffffff" }}>{q}</span>
+                <span className="font-semibold text-sm sm:text-base" style={{ color: "#F4F4F2" }}>{q}</span>
                 <ChevronDown
                   size={18}
                   className="flex-shrink-0 transition-transform duration-300"
-                  style={{ color: "#16a34a", transform: open === i ? "rotate(180deg)" : "rotate(0deg)" }}
+                  style={{ color: "#C5A880", transform: open === i ? "rotate(180deg)" : "rotate(0deg)" }}
                 />
               </button>
               {open === i && (
                 <div className="px-6 pb-5 animate-fade-in">
-                  <p className="text-sm leading-relaxed" style={{ color: "#e2e8f0" }}>{a}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(244,244,242,0.72)" }}>{a}</p>
                 </div>
               )}
             </div>

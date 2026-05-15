@@ -35,10 +35,10 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+          <span className="label-gold inline-block mb-3">
             O que dizem sobre nós
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#F4F4F2" }}>
             Resultados que <span className="gradient-text">falam por si</span>
           </h2>
           <p className="max-w-xl mx-auto text-lg" style={{ color: "#94a3b8" }}>
@@ -51,10 +51,10 @@ export default function TestimonialsSection() {
             <div
               key={name}
               className="card-lift rounded-2xl p-10 flex flex-col"
-              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}
+              style={{ backgroundColor: "#1E1208", border: "1px solid rgba(255,255,255,0.04)", boxShadow: "none" }}
             >
               <span className="quote-mark">&ldquo;</span>
-              <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#e2e8f0" }}>
+              <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "rgba(244,244,242,0.78)" }}>
                 {text}
               </p>
               <div className="flex items-center gap-3">
@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
                   {initial}
                 </div>
                 <div>
-                  <p className="font-semibold text-sm" style={{ color: "#ffffff" }}>{name}</p>
+                  <p className="font-semibold text-sm" style={{ color: "#F4F4F2" }}>{name}</p>
                   <p className="text-xs" style={{ color: "#94a3b8" }}>{role}</p>
                 </div>
               </div>

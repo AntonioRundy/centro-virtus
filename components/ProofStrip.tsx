@@ -10,7 +10,7 @@ export default function ProofStrip() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
 
-          <p className="font-bold text-lg lg:text-xl text-center lg:text-left" style={{ color: "#ffffff" }}>
+          <p className="font-bold text-lg lg:text-xl text-center lg:text-left" style={{ color: "#F4F4F2" }}>
             Mais de{" "}
             <span style={{ color: "#16a34a" }}>200 alunos</span>{" "}
             já confiam no Centro de Estudos Virtus
@@ -27,7 +27,7 @@ export default function ProofStrip() {
                 >
                   {icon}
                 </div>
-                <span className="text-sm font-medium" style={{ color: "#e2e8f0" }}>
+                <span className="text-sm font-medium" style={{ color: "#F4F4F2" }}>
                   {text}
                 </span>
               </div>

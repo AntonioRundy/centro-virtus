@@ -11,10 +11,10 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#16a34a" }}>
+          <span className="label-gold inline-block mb-3">
             Credenciais
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#ffffff" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ color: "#F4F4F2" }}>
             Professores <span className="gradient-text">Qualificados</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg" style={{ color: "#94a3b8" }}>
@@ -26,9 +26,9 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {credentials.map(({ title, desc }) => (
             <div key={title} className="card-lift rounded-2xl p-10 text-center"
-              style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
-              <h3 className="font-extrabold text-lg text-white mb-3">{title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#94a3b8" }}>{desc}</p>
+              style={{ backgroundColor: "#1E1208", border: "1px solid rgba(255,255,255,0.04)", boxShadow: "none" }}>
+              <h3 className="font-extrabold text-xl mb-3" style={{ color: "#F4F4F2" }}>{title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(244,244,242,0.60)" }}>{desc}</p>
             </div>
           ))}
         </div>
@@ -36,8 +36,8 @@ export default function TeamSection() {
         {/* Testimonial */}
         <div className="mt-16 max-w-3xl mx-auto">
           <div className="rounded-2xl px-10 py-10 text-center"
-            style={{ backgroundColor: "#172237", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "none" }}>
-            <p className="text-lg leading-relaxed italic" style={{ color: "#e2e8f0" }}>
+            style={{ backgroundColor: "#1E1208", border: "1px solid rgba(255,255,255,0.04)", boxShadow: "none" }}>
+            <p className="text-lg leading-relaxed italic" style={{ color: "rgba(244,244,242,0.80)" }}>
               "O Centro de Estudos Virtus transformou a relação do meu filho com a Matemática.
               Em dois meses, a nota subiu de 10 para 16."
             </p>

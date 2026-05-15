@@ -21,11 +21,11 @@ export default function CTASection() {
           Vagas limitadas este mês
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6" style={{ color: "#F4F4F2" }}>
           Dê o próximo passo{" "}
           <span className="gradient-text">hoje.</span>
         </h2>
-        <p className="text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: "#94a3b8" }}>
+        <p className="text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: "rgba(244,244,242,0.65)" }}>
           A primeira aula é gratuita. Sem compromisso. Sem burocracia.
           Só a oportunidade de ver o que podemos fazer pelo seu educando.
         </p>
@@ -33,7 +33,7 @@ export default function CTASection() {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           {["✅ Primeira aula gratuita", "✅ Professores qualificados", "✅ Resultados reais"].map((t) => (
             <span key={t} className="text-sm px-4 py-2 rounded-full"
-              style={{ color: "#94a3b8", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              style={{ color: "rgba(244,244,242,0.65)", backgroundColor: "rgba(30,18,8,0.7)", border: "1px solid rgba(255,255,255,0.06)" }}>
               {t}
             </span>
           ))}
@@ -66,17 +66,17 @@ export default function CTASection() {
             rel="noopener noreferrer"
             className="card-lift group rounded-2xl p-8 text-left transition-all"
             style={{
-              backgroundColor: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(212,175,55,0.30)",
+              backgroundColor: "rgba(30,18,8,0.8)",
+              border: "1px solid rgba(197,168,128,0.20)",
             }}
           >
-            <MessageCircle size={28} className="mb-4" style={{ color: "#d4af37" }} />
-            <h3 className="text-white font-bold text-lg mb-2">Receber Detalhes</h3>
-            <p className="text-sm leading-relaxed" style={{ color: "#94a3b8" }}>
+            <MessageCircle size={28} className="mb-4" style={{ color: "#C5A880" }} />
+            <h3 className="font-bold text-lg mb-2" style={{ color: "#F4F4F2" }}>Receber Detalhes</h3>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(244,244,242,0.55)" }}>
               Receba por WhatsApp toda a informação sobre preços, horários e planos disponíveis.
             </p>
             <span className="inline-block mt-4 text-xs font-semibold group-hover:translate-x-1 transition-transform"
-              style={{ color: "rgba(212,175,55,0.70)" }}>
+              style={{ color: "#C5A880" }}>
               Receber detalhes →
             </span>
           </a>
