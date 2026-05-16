@@ -57,27 +57,31 @@ function PhotoCard({ member }: { member: TeamMember }) {
   return (
     <motion.div
       variants={itemVariants}
-      className="group rounded-2xl overflow-hidden transition-all duration-350"
-      style={{
-        backgroundColor: "#111520",
-        border: "1px solid rgba(255,255,255,0.09)",
-      }}
-      whileHover={{ borderColor: "rgba(197,168,128,0.28)", y: -4 }}
+      className="group rounded-2xl overflow-hidden"
+      style={{ backgroundColor: "#111520", border: "1px solid rgba(255,255,255,0.08)" }}
+      whileHover={{ borderColor: "rgba(197,168,128,0.25)", y: -4 } as Record<string, unknown>}
     >
-      {/* Content */}
-      <div className="p-8 lg:p-10">
-        {/* Photo — mesmo tamanho que o avatar dos outros cards */}
-        <div className="w-14 h-14 rounded-full overflow-hidden mb-6 flex-shrink-0"
-          style={{ border: "2px solid rgba(22,163,74,0.35)" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(member.photo!)}
-            alt={member.name}
-            className="w-full h-full object-cover object-top"
-            style={{ filter: "brightness(0.92) contrast(1.04)" }}
-          />
-        </div>
-        <h3 className="font-bold text-base mb-1" style={{ color: "#FFFFFF" }}>{member.name}</h3>
+      {/* Photo — retrato editorial */}
+      <div className="relative overflow-hidden" style={{ height: "190px" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(member.photo!)}
+          alt={`${member.name} — ${member.role}`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          style={{ objectPosition: "50% 18%", filter: "brightness(0.82) contrast(1.10) saturate(0.88)" }}
+        />
+        {/* Gradient overlay — funde com o card background */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent 45%, rgba(17,21,32,0.92) 100%)" }}
+        />
+      </div>
+
+      {/* Text */}
+      <div className="px-7 pt-5 pb-8">
+        <h3 className={`${playfair.className} font-bold text-base mb-1`} style={{ color: "#FFFFFF" }}>
+          {member.name}
+        </h3>
         <p className="text-xs mb-4" style={{ color: "rgba(244,244,242,0.45)" }}>{member.role}</p>
         <div className="h-px mb-4" style={{ backgroundColor: "rgba(255,255,255,0.06)" }} />
         <p className="text-xs font-medium" style={{ color: "#C5A880" }}>{member.specialty}</p>
