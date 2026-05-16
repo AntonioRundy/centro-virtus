@@ -68,12 +68,12 @@ function PhotoCard({ member }: { member: TeamMember }) {
           src={asset(member.photo!)}
           alt={`${member.name} — ${member.role}`}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-          style={{ objectPosition: "50% 18%", filter: "brightness(0.82) contrast(1.10) saturate(0.88)" }}
+          style={{ objectPosition: "50% 18%", imageRendering: "auto" }}
         />
-        {/* Gradient overlay — funde com o card background */}
+        {/* Gradient apenas na faixa inferior — não toca no rosto */}
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, transparent 45%, rgba(17,21,32,0.92) 100%)" }}
+          className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none"
+          style={{ background: "linear-gradient(to top, rgba(17,21,32,1) 0%, transparent 100%)" }}
         />
       </div>
 
