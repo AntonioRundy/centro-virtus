@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
-import Navbar               from "@/components/Navbar";
-import HeroSection          from "@/components/HeroSection";
-import ProofStrip           from "@/components/ProofStrip";
-import ServicesSection      from "@/components/ServicesSection";
-import CourseSelector       from "@/components/CourseSelector";
-import MethodologySection   from "@/components/MethodologySection";
-import InternationalSection from "@/components/InternationalSection";
-import EquipeSection        from "@/components/EquipeSection";
-import TeamSection          from "@/components/TeamSection";
-import TestimonialsSection  from "@/components/TestimonialsSection";
-import DifferentialsSection from "@/components/DifferentialsSection";
-import FAQSection           from "@/components/FAQSection";
-import CTASection           from "@/components/CTASection";
-import ContactSection       from "@/components/ContactSection";
-import WhatsAppFloat        from "@/components/WhatsAppFloat";
-import Footer               from "@/components/Footer";
+import Navbar          from "@/components/Navbar";
+import Footer          from "@/components/Footer";
+import WhatsAppFloat   from "@/components/WhatsAppFloat";
+import EduHero         from "@/components/educacao/EduHero";
+import EduStats        from "@/components/educacao/EduStats";
+import EduBenefits     from "@/components/educacao/EduBenefits";
+import EduLevels       from "@/components/educacao/EduLevels";
+import EduMethodology  from "@/components/educacao/EduMethodology";
+import EduTestimonials from "@/components/educacao/EduTestimonials";
+import EduTeam         from "@/components/educacao/EduTeam";
+import EduFAQ          from "@/components/educacao/EduFAQ";
+import CourseSelector  from "@/components/CourseSelector";
+import CTASection      from "@/components/CTASection";
+import ContactSection  from "@/components/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Virtus Educação | Explicações e Apoio Escolar — Centro de Estudos Virtus",
+  title: "Virtus Educação | Explicações e Apoio Escolar Premium — Centro de Estudos Virtus",
   description:
-    "Acompanhamento escolar personalizado em Luanda. Explicações, apoio escolar e preparação para exames online e ao domicílio. Primeira aula gratuita.",
+    "Plataforma educacional premium em Luanda. Explicações personalizadas, preparação para exames e acompanhamento escolar — online e ao domicílio. Primeira aula gratuita.",
 };
 
 export default function EducacaoPage() {
@@ -27,17 +25,15 @@ export default function EducacaoPage() {
     <>
       <Navbar />
       <main>
-        <HeroSection />
-        <ProofStrip />
-        <ServicesSection />
+        <EduHero />
+        <EduStats />
+        <EduBenefits />
+        <EduLevels />
         <CourseSelector />
-        <MethodologySection />
-        <InternationalSection />
-        <EquipeSection />
-        <TeamSection />
-        <TestimonialsSection />
-        <DifferentialsSection />
-        <FAQSection />
+        <EduMethodology />
+        <EduTestimonials />
+        <EduTeam />
+        <EduFAQ />
         <CTASection />
         <ContactSection />
       </main>
