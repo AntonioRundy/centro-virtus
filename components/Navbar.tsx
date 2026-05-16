@@ -1,16 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { asset } from "@/lib/basePath";
 
 const navLinks = [
-  { label: "Metodologia", href: "#metodologia" },
-  { label: "Serviços",    href: "#servicos"    },
-  { label: "Preços",      href: "#precos"      },
-  { label: "Escolas",     href: "#escolas"     },
-  { label: "Equipa",      href: "#equipe"      },
-  { label: "Contacto",    href: "#contacto"    },
+  { label: "Pesquisa & Dev.",       href: "/pesquisa"     },
+  { label: "Consultoria Académica", href: "/consultoria"  },
+  { label: "Educação",              href: "/educacao"     },
 ];
 
 const WA_URL = "https://wa.me/244946038986";
@@ -18,12 +17,20 @@ const WA_URL = "https://wa.me/244946038986";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Hide CTA on the homepage
+  const isHomepage =
+    pathname === "/" ||
+    pathname === "/centro-virtus/" ||
+    pathname.endsWith("/centro-virtus/") ||
+    pathname === "/centro-virtus";
 
   return (
     <header
@@ -37,40 +44,45 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={asset("/logo.png")} alt="Logo Centro de Estudos Virtus" className="h-10 w-auto object-contain" />
           <span className="font-extrabold text-base leading-tight hidden lg:block" style={{ color: "#ffffff" }}>
             Centro de Estudos{" "}
             <span style={{ color: "#16a34a" }}>Virtus</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="relative text-sm font-medium transition-colors duration-200 group"
-                style={{ color: "#F4F4F2" }}
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 rounded-full" />
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname.includes(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="relative text-sm font-medium transition-colors duration-200 group"
+                  style={{ color: isActive ? "#C5A880" : "#F4F4F2" }}
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 rounded-full" />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* CTA */}
-        <a
-          href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-green-600/25 hover:scale-[1.03]"
-        >
-          Agendar Aula
-        </a>
+        {/* CTA — hidden on homepage */}
+        {!isHomepage && (
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-green-600/25 hover:scale-[1.03]"
+          >
+            Agendar Aula
+          </a>
+        )}
 
         {/* Mobile hamburger */}
         <button
@@ -87,18 +99,21 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden border-t border-white/5 px-4 pb-6 pt-3 animate-fade-in" style={{ backgroundColor: "#070D1B" }}>
           <ul className="flex flex-col gap-1 mb-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors hover:bg-white/8"
-                  style={{ color: "#F4F4F2" }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname.includes(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors hover:bg-white/8"
+                    style={{ color: isActive ? "#C5A880" : "#F4F4F2" }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <a
             href={WA_URL}

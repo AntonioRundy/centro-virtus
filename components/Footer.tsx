@@ -4,22 +4,21 @@ import { asset } from "@/lib/basePath";
 const WA_URL = "https://wa.me/244946038986";
 
 const links: Record<string, { label: string; href: string }[]> = {
-  "Serviços": [
-    { label: "Explicação",              href: "#servicos" },
-    { label: "Apoio Escolar",           href: "#servicos" },
-    { label: "Planos de Revisão",       href: "#servicos" },
-    { label: "Preparação para Exames",  href: "#servicos" },
+  "Divisões": [
+    { label: "Pesquisa & Desenvolvimento", href: "/pesquisa"    },
+    { label: "Consultoria Académica",       href: "/consultoria" },
+    { label: "Virtus Educação",             href: "/educacao"    },
   ],
-  "Escolas": [
-    { label: "Escola Portuguesa de Luanda", href: "#escolas" },
-    { label: "Camilo Castelo Branco",        href: "#escolas" },
-    { label: "Luanda Int. School",           href: "#escolas" },
-    { label: "Colégio Angolano de Talatona", href: "#escolas" },
+  "Educação": [
+    { label: "Explicação",             href: "/educacao#servicos" },
+    { label: "Apoio Escolar",          href: "/educacao#servicos" },
+    { label: "Preparação para Exames", href: "/educacao#servicos" },
+    { label: "Ver Preços",             href: "/educacao#precos"   },
   ],
   "Contacto": [
-    { label: "+244 946 038 986",       href: "tel:+244946038986"           },
+    { label: "+244 946 038 986",               href: "tel:+244946038986"                     },
     { label: "centrodeestudovirtus@gmail.com", href: "mailto:centrodeestudovirtus@gmail.com" },
-    { label: "Luanda, Angola",         href: "#contacto"                   },
+    { label: "Luanda, Angola",                 href: "/educacao#contacto"                    },
   ],
 };
 
