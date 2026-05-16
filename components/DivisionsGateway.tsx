@@ -34,7 +34,7 @@ const divisions = [
     name: "Virtus Educação",
     tagline: "Formação académica personalizada",
     description:
-      "Acompanhamento escolar personalizado, preparação estratégica para exames e formação complementar com metodologia moderna, online e ao domicílio em Luanda.",
+      "Explicações, acompanhamento escolar, cursos de apoio ao currículo e preparação para exames e concursos escolares e interescolares.",
     href: "/educacao",
     hoverBorder: "rgba(22,163,74,0.25)",
     hoverGlow: "rgba(22,163,74,0.06)",

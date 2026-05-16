@@ -9,6 +9,7 @@ import EduLevels       from "@/components/educacao/EduLevels";
 import EduMethodology  from "@/components/educacao/EduMethodology";
 import EduTestimonials from "@/components/educacao/EduTestimonials";
 import EduTeam         from "@/components/educacao/EduTeam";
+import EduServices     from "@/components/educacao/EduServices";
 import EduFAQ          from "@/components/educacao/EduFAQ";
 import CourseSelector  from "@/components/CourseSelector";
 import CTASection      from "@/components/CTASection";
@@ -27,6 +28,7 @@ export default function EducacaoPage() {
       <main>
         <EduHero />
         <EduStats />
+        <EduServices />
         <EduBenefits />
         <EduLevels />
         <CourseSelector />
