@@ -62,7 +62,7 @@ function PhotoCard({ member }: { member: TeamMember }) {
       whileHover={{ borderColor: "rgba(197,168,128,0.25)", y: -4 } as Record<string, unknown>}
     >
       {/* Photo — retrato editorial */}
-      <div className="relative overflow-hidden" style={{ height: "190px" }}>
+      <div className="relative overflow-hidden" style={{ height: "130px" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset(member.photo!)}
